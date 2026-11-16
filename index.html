@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="녹양중학교 3학년을 위한 의정부 학군 일반고 입학 안내. 의정부 고등학교를 지도에서 찾고, 녹양중에서 가는 길을 보고, 지망 순위를 적어 보세요.">
+<meta name="theme-color" content="#EDEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131714" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="녹양중 고입 길잡이">
+<meta property="og:description" content="의정부 학군 고등학교를 지도에서 찾고, 지망 순위를 적어 보는 연습용 페이지입니다.">
+<meta property="og:locale" content="ko_KR">
+<title>녹양중 고입 길잡이</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --paper:#EDEFEB; --surface:#FFFFFF; --surface2:#F6F8F4; --raise:#FFFFFF;
+  --ink:#171C18; --ink2:#4A554C; --muted:#7C867E; --line:#D7DCD4; --line2:#E7EBE4;
+  --seal:#2F5D8A; --seal-ink:#FFFFFF; --seal-soft:#E7EEF6; --seal-line:#BCCDE0;
+  --boy:#1E4FA8; --boy-bg:#E9EFF9; --boy-line:#B9CCEA;
+  --co:#2C7A4B; --co-bg:#E7F2EB; --co-line:#B7D8C3;
+  --girl:#B0487A; --girl-bg:#F8EAF1; --girl-line:#E6BFD2;
+  --off:#9AA39B; --off-bg:#EDEFEB; --off-line:#D2D8D0;
+  --jasa:#A9781E; --jasa-bg:#FAF1DC; --jasa-line:#E4CD97;
+  --early:#6B5BA8; --early-bg:#EEEBF7; --early-line:#CEC6E8;
+  --focus:#0E7581; --focus-bg:#E3F3F4; --focus-line:#A9D6DA;
+  --ok:#2C7A4B; --warn:#A9781E; --bad:#A6303B; --bad-bg:#F7E9EA; --bad-line:#E0BFC2;
+  --land:#E3EDDA; --land-line:#84AB6C;
+  --shadow:0 1px 2px rgba(20,30,22,.05), 0 8px 24px -12px rgba(20,30,22,.18);
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131714; --surface:#1B201C; --surface2:#222823; --raise:#252C26;
+    --ink:#E7EBE6; --ink2:#B3BCB4; --muted:#8B948C; --line:#333B35; --line2:#2A312C;
+    --seal:#8DB6E0; --seal-ink:#13202C; --seal-soft:#1C2734; --seal-line:#34495F;
+    --boy:#8FB4F0; --boy-bg:#1A2436; --boy-line:#2F4467;
+    --co:#7FCB99; --co-bg:#16281D; --co-line:#2C4A36;
+    --girl:#EE9CC3; --girl-bg:#33202A; --girl-line:#5C3549;
+    --off:#7C857D; --off-bg:#242A25; --off-line:#39413A;
+    --jasa:#E3BC72; --jasa-bg:#2E2614; --jasa-line:#544527;
+    --early:#B7AAEC; --early-bg:#24203A; --early-line:#433B66;
+    --focus:#7FD3DB; --focus-bg:#142A2D; --focus-line:#2B5257;
+    --ok:#7FCB99; --warn:#E3BC72; --bad:#F0949B; --bad-bg:#332224; --bad-line:#5A383C;
+    --land:#222B20; --land-line:#618150;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131714; --surface:#1B201C; --surface2:#222823; --raise:#252C26;
+  --ink:#E7EBE6; --ink2:#B3BCB4; --muted:#8B948C; --line:#333B35; --line2:#2A312C;
+  --seal:#8DB6E0; --seal-ink:#13202C; --seal-soft:#1C2734; --seal-line:#34495F;
+  --boy:#8FB4F0; --boy-bg:#1A2436; --boy-line:#2F4467;
+  --co:#7FCB99; --co-bg:#16281D; --co-line:#2C4A36;
+  --girl:#EE9CC3; --girl-bg:#33202A; --girl-line:#5C3549;
+  --off:#7C857D; --off-bg:#242A25; --off-line:#39413A;
+  --jasa:#E3BC72; --jasa-bg:#2E2614; --jasa-line:#544527;
+  --early:#B7AAEC; --early-bg:#24203A; --early-line:#433B66;
+  --focus:#7FD3DB; --focus-bg:#142A2D; --focus-line:#2B5257;
+  --ok:#7FCB99; --warn:#E3BC72; --bad:#F0949B; --bad-bg:#332224; --bad-line:#5A383C;
+  --land:#222B20; --land-line:#618150;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.disp{ font-family:"Gothic A1","IBM Plex Sans KR",sans-serif; letter-spacing:-.02em; text-wrap:balance; }
+a{ color:var(--seal); text-underline-offset:3px; }
+.mono{ font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums; }
+
+.wrap{ max-width:1080px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky; top:env(safe-area-inset-top, 0px); z-index:40; background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:41; background:var(--paper); }
+.topbar .wrap{ display:flex; align-items:center; gap:14px; height:56px; }
+.brand{ display:flex; align-items:baseline; gap:8px; font-weight:700; font-size:14px; white-space:nowrap; }
+.brand .seal{
+  font-family:"Gothic A1",sans-serif; font-weight:900; font-size:12px; letter-spacing:.02em;
+  color:var(--seal-ink); background:var(--seal); border-radius:4px; padding:3px 7px;
+}
+.brand small{ color:var(--muted); font-weight:500; }
+nav.jump{ margin-left:auto; display:flex; gap:4px; }
+nav.jump a{ font-size:13px; font-weight:600; color:var(--ink2); text-decoration:none; padding:6px 10px; border-radius:8px; white-space:nowrap; }
+nav.jump a:hover{ background:var(--surface2); color:var(--ink); }
+@media (max-width:720px){ nav.jump a span{display:none} nav.jump a::before{content:attr(data-n)} }
+@media (max-width:520px){
+  .topbar .wrap{ gap:6px; height:52px; }
+  .brand{ font-size:13px; gap:6px; }
+  .brand .seal{ font-size:11px; padding:3px 6px; }
+  .brand small{ display:none; }
+  nav.jump{ gap:0; }
+  nav.jump a{ padding:6px 6px; font-size:12.5px; }
+}
+
+/* ---------- hero ---------- */
+.hero{ padding:40px 0 28px; }
+.eyebrow{ font-size:12px; font-weight:700; letter-spacing:.09em; color:var(--seal); margin-bottom:12px; }
+.hero h1{ font-size:clamp(28px,5.4vw,46px); font-weight:900; line-height:1.18; margin:0 0 14px; }
+.hero p.lede{ font-size:17px; color:var(--ink2); max-width:62ch; margin:0 0 18px; }
+.profile{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; padding:12px 14px; margin:0 0 16px;
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); max-width:720px;
+}
+.profile .pl{ font-size:12px; font-weight:700; color:var(--muted); letter-spacing:.04em; }
+.profile label{ display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; }
+.profile select{
+  font:inherit; font-size:14px; font-weight:600; padding:6px 10px; border-radius:9px; border:1px solid var(--line);
+  background:var(--surface2); color:var(--ink); max-width:100%;
+}
+.profile select:focus-visible{ outline:2.5px solid var(--seal); outline-offset:1px; }
+.profile .gus{ font-size:12.5px; color:var(--muted); }
+.counts{ display:flex; flex-wrap:wrap; gap:8px; }
+.cnt{
+  display:flex; align-items:baseline; gap:7px; background:var(--surface); border:1px solid var(--line);
+  border-radius:999px; padding:7px 14px; font-size:13px; font-weight:600; box-shadow:var(--shadow);
+}
+.cnt b{ font-family:"Gothic A1",sans-serif; font-size:17px; font-weight:900; }
+.cnt.b b{color:var(--boy)} .cnt.c b{color:var(--co)} .cnt.g b{color:var(--girl)} .cnt.e b{color:var(--early)} .cnt.x b{color:var(--off)}
+
+/* ---------- 확인 상태 ---------- */
+.status{ margin-top:18px; padding:14px 16px; max-width:720px; }
+.status h3{ font-size:14px; font-weight:900; margin:0 0 8px; }
+.status ul{ margin:0; padding:0; list-style:none; display:grid; gap:5px; font-size:13.5px; color:var(--ink2); }
+.status li{ display:flex; gap:8px; align-items:baseline; }
+.status li .badge{ flex:none; }
+
+/* ---------- sections ---------- */
+section{ padding:34px 0; border-top:1px solid var(--line); scroll-margin-top:64px; }
+.shead{ display:flex; align-items:flex-start; gap:14px; margin-bottom:20px; }
+.snum{
+  flex:none; width:34px; height:34px; border-radius:10px; background:var(--ink); color:var(--paper);
+  font-family:"Gothic A1",sans-serif; font-weight:900; font-size:16px;
+  display:flex; align-items:center; justify-content:center; margin-top:2px;
+}
+.shead h2{ font-size:clamp(21px,3.2vw,27px); font-weight:900; margin:0 0 4px; }
+.shead p{ margin:0; color:var(--ink2); font-size:14.5px; }
+.card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); }
+
+/* ---------- search + legend ---------- */
+.toolrow{ display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start; margin-bottom:12px; }
+.search{ position:relative; flex:1 1 280px; min-width:0; }
+.search input{
+  width:100%; font:inherit; font-size:14.5px; padding:10px 14px; border-radius:11px; border:1px solid var(--line);
+  background:var(--surface); color:var(--ink); box-shadow:var(--shadow);
+}
+.search input:focus{ outline:2.5px solid var(--seal); outline-offset:1px; border-color:var(--seal); }
+.sugg{
+  position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:30; list-style:none; margin:0; padding:5px;
+  background:var(--raise); border:1px solid var(--line); border-radius:11px; box-shadow:var(--shadow); max-height:320px; overflow:auto;
+}
+.sugg button{
+  width:100%; text-align:left; font:inherit; font-size:14px; padding:8px 10px; border:0; border-radius:8px;
+  background:transparent; color:var(--ink); cursor:pointer; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap;
+}
+.sugg button small{ color:var(--muted); font-size:12px; }
+.sugg button:hover, .sugg button:focus-visible{ background:var(--surface2); outline:none; }
+.tgline{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--ink2); padding:9px 4px; cursor:pointer; }
+.tgline input{ width:18px; height:18px; accent-color:var(--seal); }
+.legend{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:12px; }
+.lg{
+  display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600;
+  border:1px solid var(--line); border-radius:999px; padding:5px 12px; background:var(--surface);
+}
+.lg i{ width:11px; height:11px; border-radius:50%; display:block; }
+.lg.b i{background:var(--boy)} .lg.c i{background:var(--co)} .lg.g i{background:var(--girl)} .lg.x i{background:var(--off)}
+.lg.e i{background:var(--surface); box-shadow:0 0 0 3px var(--early)}
+.lg.m i{background:var(--seal); border-radius:3px; transform:rotate(45deg)}
+
+/* ---------- map ---------- */
+.maparea{ padding:10px 10px 4px; overflow:hidden; }
+svg.map{ display:block; width:100%; max-width:820px; margin:0 auto; height:auto; touch-action:manipulation; font-family:"Gothic A1",sans-serif; }
+.mk{ cursor:pointer; }
+.mk .hit{ fill:transparent; }
+.mk .dot{ transition:r .18s ease; }
+.mk:hover .dot, .mk:focus-visible .dot{ r:9.5; }
+.mk:focus{ outline:none; }
+.mk .ring{ opacity:0; fill:none; stroke:var(--seal); stroke-width:2.5; }
+.mk:focus-visible .ring, .mk.sel .ring{ opacity:1; }
+@media (prefers-reduced-motion:reduce){ .mk .dot{transition:none} }
+.mapnote{ font-size:12px; color:var(--muted); padding:0 6px 8px; }
+
+/* ---------- 거리표 ---------- */
+.near{ margin-top:14px; padding:16px 18px; }
+.near h3{ font-size:15px; font-weight:900; margin:0 0 3px; }
+.near .sub{ font-size:12.5px; color:var(--muted); margin:0 0 10px; }
+table.tbl tr.rowlink{ cursor:pointer; }
+table.tbl tr.rowlink:hover td{ background:var(--surface2); }
+table.tbl tr.rowlink:focus-visible{ outline:2.5px solid var(--seal); outline-offset:-2px; }
+table.tbl tr.off td{ color:var(--muted); }
+.bar{ display:inline-block; height:6px; border-radius:3px; background:var(--seal); vertical-align:middle; margin-right:6px; opacity:.55; }
+
+/* ---------- 학생 · 진로 현황 ---------- */
+.stats{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-bottom:10px; }
+@media (max-width:520px){ .stats{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+.stat{ background:var(--surface2); border:1px solid var(--line2); border-radius:10px; padding:9px 11px; }
+.stat b{ display:block; font-family:"Gothic A1",sans-serif; font-weight:900; font-size:21px; line-height:1.2; font-variant-numeric:tabular-nums; }
+.stat b small{ font-size:12px; font-weight:700; color:var(--muted); margin-left:2px; }
+.stat span{ font-size:12px; color:var(--muted); }
+table.tbl small.pc{ font-size:11px; color:var(--muted); }
+@media (max-width:560px){ table.tbl small.pc{ display:block; } }
+table.tbl tr.sum th, table.tbl tr.sum td{ font-weight:700; color:var(--ink); border-bottom:0; }
+
+/* ---------- school detail ---------- */
+.detail{ margin-top:14px; padding:18px 20px; }
+.detail .dh{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; margin-bottom:4px; }
+.detail h3{ font-size:21px; font-weight:900; margin:0; }
+.detail .full{ font-size:13px; color:var(--muted); margin:0 0 12px; }
+.badge{ font-size:11.5px; font-weight:700; padding:3px 9px; border-radius:999px; border:1px solid; white-space:nowrap; }
+.badge.ok{ color:var(--ok); background:var(--co-bg); border-color:var(--co-line); }
+.badge.no{ color:var(--bad); background:var(--bad-bg); border-color:var(--bad-line); }
+.badge.w{ color:var(--warn); background:var(--jasa-bg); border-color:var(--jasa-line); }
+.badge.e{ color:var(--early); background:var(--early-bg); border-color:var(--early-line); }
+.badge.b{ color:var(--boy); background:var(--boy-bg); border-color:var(--boy-line); }
+.badge.c{ color:var(--co); background:var(--co-bg); border-color:var(--co-line); }
+.badge.g{ color:var(--girl); background:var(--girl-bg); border-color:var(--girl-line); }
+.badge.n{ color:var(--ink2); background:var(--surface2); border-color:var(--line); }
+dl.facts{ display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin:0 0 16px; font-size:14px; }
+dl.facts dt{ color:var(--muted); font-weight:600; font-size:13px; white-space:nowrap; }
+dl.facts dd{ margin:0; min-width:0; overflow-wrap:anywhere; }
+.btnrow{ display:flex; flex-wrap:wrap; gap:8px; }
+.btn{
+  display:inline-flex; align-items:center; gap:7px; font:inherit; font-size:14px; font-weight:600;
+  padding:9px 16px; border-radius:10px; border:1px solid var(--line); background:var(--surface2);
+  color:var(--ink); cursor:pointer; text-decoration:none;
+}
+.btn:hover{ border-color:var(--ink2); }
+.btn.primary{ background:var(--seal); border-color:var(--seal); color:var(--seal-ink); }
+.btn.primary:hover{ filter:brightness(1.08); }
+.btn.ghost{ background:transparent; }
+.btn.naver{ background:#03A94D; border-color:#03A94D; color:#fff; }
+.btn.kakao{ background:#FEE500; border-color:#FEE500; color:#191919; }
+.btn:focus-visible, .chip:focus-visible, .slot:focus-visible, .tgl:focus-visible{ outline:2.5px solid var(--seal); outline-offset:2px; }
+.empty{ color:var(--muted); font-size:14px; padding:6px 0; }
+
+.dsec{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line2); }
+.dsec h4{ font-size:14.5px; font-weight:900; margin:0 0 10px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.dsec h4 small{ font-family:"IBM Plex Sans KR",sans-serif; font-weight:500; font-size:12px; color:var(--muted); letter-spacing:0; }
+.dgrid{ display:grid; gap:18px; }
+@media (min-width:860px){ .dgrid{ grid-template-columns:1fr 1fr; } }
+.dgrid > *{ min-width:0; }
+.tblwrap{ overflow-x:auto; max-width:100%; }
+table.tbl{ width:100%; border-collapse:collapse; font-size:13.5px; font-variant-numeric:tabular-nums; }
+table.tbl th, table.tbl td{ padding:6px 8px; border-bottom:1px solid var(--line2); text-align:right; white-space:nowrap; }
+table.tbl th:first-child, table.tbl td:first-child, table.tbl td.l, table.tbl th.l{ text-align:left; }
+table.tbl th{ font-size:12px; color:var(--muted); font-weight:600; }
+.fine{ font-size:12px; color:var(--muted); margin:8px 0 0; }
+.addrrow{ display:flex; gap:6px; margin-bottom:10px; }
+.addrrow input{
+  flex:1; min-width:0; font:inherit; font-size:14px; padding:8px 12px; border-radius:9px; border:1px solid var(--line);
+  background:var(--surface); color:var(--ink);
+}
+.addrrow input:focus{ outline:2.5px solid var(--seal); outline-offset:1px; border-color:var(--seal); }
+
+/* ---------- simulator ---------- */
+.sim{ display:grid; gap:16px; }
+@media (min-width:900px){ .sim{ grid-template-columns:1.15fr 1fr; align-items:start; } }
+.panel{ padding:18px 20px; }
+.panel h3{ font-size:15px; font-weight:900; margin:0 0 3px; }
+.panel .sub{ font-size:12.5px; color:var(--muted); margin:0 0 14px; }
+.stage{ margin-bottom:16px; }
+.stage .st{ display:flex; align-items:baseline; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+.stage .st b{ font-family:"Gothic A1",sans-serif; font-size:13.5px; font-weight:900; }
+.stage .st span{ font-size:12px; color:var(--muted); }
+.slots{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.slot{
+  position:relative; text-align:left; font:inherit; width:100%; cursor:pointer;
+  border:1.5px dashed var(--line); background:var(--surface2); border-radius:10px;
+  padding:10px 34px 10px 12px; min-height:56px; color:var(--muted); font-size:13.5px;
+}
+.slot .sl{ display:block; font-size:11px; font-weight:700; color:var(--muted); letter-spacing:.04em; }
+.slot .sv{ display:block; font-size:14.5px; font-weight:700; color:var(--ink); margin-top:2px; }
+.slot .sd{ display:block; font-size:11.5px; color:var(--muted); font-weight:500; }
+.slot.filled{ border-style:solid; background:var(--surface); }
+.slot.active{ border-color:var(--seal); border-style:solid; background:var(--seal-soft); }
+.slot.over{ border-color:var(--seal); border-style:solid; }
+.slot.skip{ opacity:.6; cursor:default; }
+.slot .x{
+  position:absolute; right:6px; top:50%; transform:translateY(-50%);
+  border:0; background:transparent; color:var(--muted); font-size:17px; cursor:pointer;
+  width:26px; height:26px; border-radius:7px; line-height:26px; text-align:center;
+}
+.slot .x:hover{ background:var(--line2); color:var(--ink); }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; }
+.chip{
+  font:inherit; font-size:13px; font-weight:600; cursor:grab;
+  border:1px solid var(--line); border-radius:999px; padding:6px 13px;
+  background:var(--surface); color:var(--ink); display:inline-flex; align-items:center; gap:6px;
+}
+.chip i{ width:8px; height:8px; border-radius:50%; }
+.chip.b i{background:var(--boy)} .chip.c i{background:var(--co)} .chip.g i{background:var(--girl)}
+.chip small{ font-size:11px; color:var(--muted); font-weight:600; }
+.chip:hover{ border-color:var(--ink2); }
+.chip:active{ cursor:grabbing; }
+.chip.used{ opacity:.4; }
+.grouplab{ font-size:11.5px; font-weight:700; color:var(--muted); letter-spacing:.05em; margin:14px 0 7px; }
+.grouplab.first{ margin-top:0; }
+.exnote{
+  font-size:12.5px; line-height:1.55; color:var(--ink2); margin:14px 0 0;
+  padding:10px 13px; border-radius:9px; background:var(--surface2); border:1px solid var(--line2);
+}
+.tglrow{
+  display:flex; align-items:flex-start; gap:11px; padding:12px 14px; border-radius:10px;
+  background:var(--surface2); border:1px solid var(--line2); margin-bottom:12px;
+}
+.tgl{ flex:none; width:20px; height:20px; margin-top:2px; accent-color:var(--seal); cursor:pointer; }
+.tglrow label{ font-size:13.5px; cursor:pointer; }
+.tglrow label b{ font-weight:700; }
+.tglrow label span{ display:block; color:var(--muted); font-size:12px; }
+.actions{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+
+/* ---------- result ---------- */
+.result{ padding:18px 20px; }
+.verdict{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.vicon{
+  flex:none; width:40px; height:40px; border-radius:11px; display:flex; align-items:center;
+  justify-content:center; font-size:20px; font-weight:900; font-family:"Gothic A1",sans-serif;
+}
+.v-ok .vicon{ background:var(--co-bg); color:var(--ok); border:1px solid var(--co-line); }
+.v-warn .vicon{ background:var(--jasa-bg); color:var(--warn); border:1px solid var(--jasa-line); }
+.v-bad .vicon{ background:var(--bad-bg); color:var(--bad); border:1px solid var(--bad-line); }
+.verdict h3{ font-size:19px; font-weight:900; margin:0; }
+.verdict p{ margin:1px 0 0; font-size:13px; color:var(--muted); }
+ul.checks{ list-style:none; padding:0; margin:0; display:grid; gap:9px; }
+ul.checks li{
+  display:flex; gap:10px; font-size:13.8px; line-height:1.55;
+  padding:10px 12px; border-radius:9px; border:1px solid var(--line2); background:var(--surface2);
+}
+ul.checks li .ic{ flex:none; font-weight:900; font-family:"Gothic A1",sans-serif; font-size:14px; }
+li.c-ok .ic{color:var(--ok)} li.c-warn .ic{color:var(--warn)} li.c-bad .ic{color:var(--bad)} li.c-info .ic{color:var(--focus); font-style:italic}
+li.c-bad{ background:var(--bad-bg); border-color:var(--bad-line); }
+li.c-warn{ background:var(--jasa-bg); border-color:var(--jasa-line); }
+ul.checks li b{ font-weight:700; }
+
+/* ---------- schedule section ---------- */
+.tlbig{ list-style:none; padding:0; margin:0; }
+.tlbig li{ display:grid; grid-template-columns:190px 1fr; gap:4px 20px; padding:14px 0; border-top:1px solid var(--line2); align-items:baseline; }
+.tlbig li:first-child{ border-top:0; }
+.tlbig .d{ font-weight:700; font-size:13.5px; color:var(--seal); }
+.tlbig .t{ font-size:15px; font-weight:600; }
+.tlbig .n{ grid-column:2; font-size:13px; color:var(--muted); }
+.tlbig li.tbd .d{ color:var(--warn); }
+.tlbig .t .badge{ margin-left:6px; vertical-align:2px; }
+@media (max-width:560px){ .tlbig li{ grid-template-columns:1fr; } .tlbig .n{ grid-column:1; } }
+.rules{ display:grid; gap:12px; margin-top:16px; }
+@media (min-width:760px){ .rules{ grid-template-columns:1fr 1fr; } }
+.rule{ padding:16px 18px; }
+.rule h4{ font-size:14.5px; font-weight:900; margin:0 0 6px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.rule p{ margin:0; font-size:13.6px; color:var(--ink2); }
+.rule .k{ font-weight:700; color:var(--ink); }
+.rule .src{ display:block; margin-top:8px; font-size:11.5px; color:var(--muted); }
+footer{ border-top:1px solid var(--line); padding:26px 0 44px; font-size:12.5px; color:var(--muted); }
+footer p{ margin:0 0 6px; }
+footer a{ color:var(--muted); }
+.disclaim{
+  margin-top:18px; padding:14px 16px; border-radius:10px; background:var(--seal-soft);
+  border:1px solid var(--seal-line); color:var(--ink2); font-size:13px;
+}
+.disclaim b{ color:var(--ink); }
+.loaderr{ padding:16px; border-radius:10px; background:var(--bad-bg); border:1px solid var(--bad-line); font-size:14px; }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="brand"><span class="seal">녹양중</span> 고입 길잡이 <small>2027학년도</small></div>
+  <nav class="jump">
+    <a href="#map" data-n="① 학교"><span>① 학교 찾기</span></a>
+    <a href="#sim" data-n="② 지망"><span>② 지망 적어 보기</span></a>
+    <a href="#sched" data-n="③ 일정"><span>③ 일정 · 규칙</span></a>
+  </nav>
+</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">경기도 의정부 학군 · 고교 평준화 지역</div>
+    <h1>의정부 일반고에<br>어떻게 배정되는지 알아보세요</h1>
+    <p class="lede">녹양중학교 3학년 학생과 학부모님을 위한 연습용 페이지입니다. 지도에서 학교를 눌러 <b>학교 정보와 녹양중에서 가는 길</b>을 보고, 지망 순위를 직접 적어 보며 <b>배정 방식</b>을 익힐 수 있습니다. 실제 원서 접수는 학교에서 배부하는 안내에 따라 진행됩니다.</p>
+    <div class="profile" role="group" aria-label="내 조건">
+      <span class="pl">내 조건</span>
+      <label for="pfSex">성별
+        <select id="pfSex"><option value="남">남학생</option><option value="여">여학생</option></select></label>
+      <span class="gus">의정부 학군 (단일학군)</span>
+    </div>
+    <div class="counts" id="counts"></div>
+
+    <div class="card status">
+      <h3>2027학년도 의정부 학군 한눈에 보기</h3>
+      <ul>
+        <li><span class="badge ok">지망</span><span>학군의 <b>모든 일반고</b>에 1지망부터 끝지망까지 순위를 적습니다 — <b>남학생 12지망, 여학생 11지망</b></span></li>
+        <li><span class="badge ok">배정</span><span>내신 200점으로 배정대상자를 뽑은 뒤, 지망 순위를 반영해 <b>추첨</b>으로 1개교에 배정 (학군내 배정만, 구역 없음)</span></li>
+        <li><span class="badge ok">일정</span><span>원서 접수 <b>2026. 12. 4. ~ 10.</b> (녹양중은 12. 9. 제출) · 배정대상자 발표 <b>2027. 1. 6.</b> · 배정 학교 발표 <b>1. 22.</b></span></li>
+      </ul>
+      <p class="fine">근거: 경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」(2026. 10.), 「2027학년도 경기도 고교 평준화 학군 학생 배정 방안」(2026. 8.)</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<section id="map">
+  <div class="shead">
+    <div class="snum">1</div>
+    <div>
+      <h2>지도에서 학교 찾기</h2>
+      <p id="mapLead">의정부 학군 일반고 13곳을 좌표대로 표시했습니다. 학교 표시를 누르거나 검색하면 <b>학년별 학생 수</b>, <b>졸업생 진학 현황</b>, 녹양중에서 가는 길이 나옵니다.</p>
+    </div>
+  </div>
+
+  <div class="toolrow">
+    <div class="search">
+      <input id="q" type="search" placeholder="의정부 고등학교 이름으로 검색 (예: 발곡, 효자)" autocomplete="off" aria-label="의정부 고등학교 검색" aria-controls="sugg">
+      <ul class="sugg" id="sugg" hidden></ul>
+    </div>
+    <label class="tgline" for="showEarly"><input type="checkbox" id="showEarly"> 전기고(특성화고 · 과학고)도 지도에 표시</label>
+  </div>
+
+  <div class="legend" id="legend"></div>
+
+  <div class="card maparea">
+    <svg class="map" id="svgmap" viewBox="0 0 600 420" role="img" aria-label="의정부 고등학교 위치 지도">
+      <g id="mapbg"></g>
+      <g id="markers"></g>
+    </svg>
+    <div class="mapnote">※ 학교 좌표로 그린 개략도입니다. 동 경계선과 도로는 표시하지 않으며, 실제 축척과 다를 수 있습니다.</div>
+  </div>
+
+  <div class="card detail" id="detail" aria-live="polite">
+    <div class="empty" id="loadmsg">학교 정보를 불러오는 중입니다…</div>
+  </div>
+
+  <div class="card near">
+    <h3>녹양중에서 가까운 일반고</h3>
+    <p class="sub">직선거리 순입니다. 실제 통학 거리와 시간은 학교를 눌러 길찾기로 확인하세요. 의정부 학군은 <b>주소를 고려하지 않고</b> 지망 순위와 추첨으로 배정하므로, 가까운 학교라고 배정되는 것은 아닙니다. 모집 인원은 2027학년도 전형 계획 기준입니다.</p>
+    <div class="tblwrap"><table class="tbl" id="nearTbl"></table></div>
+  </div>
+</section>
+
+<section id="sim">
+  <div class="shead">
+    <div class="snum">2</div>
+    <div>
+      <h2>지망 순위 적어 보기</h2>
+      <p>의정부 학군은 <b>학군의 모든 일반고</b>에 순위를 매깁니다. 학교 이름을 지망 칸으로 끌어다 놓거나, 칸을 먼저 누른 뒤 학교를 누르세요. 다 적은 다음 <b>확인하기</b>를 누르면 원서 규칙에 맞는지 알려 드립니다.</p>
+    </div>
+  </div>
+
+  <div class="sim">
+    <div class="card panel">
+      <h3>지망 학교 적어 보기</h3>
+      <p class="sub" id="simSub"></p>
+      <div class="tglrow">
+        <input type="checkbox" class="tgl" id="jeongi">
+        <label for="jeongi"><b>전기고에 이미 합격했습니다</b>
+          <span>과학고 · 특성화고 · 마이스터고 등</span></label>
+      </div>
+      <div class="tglrow">
+        <input type="checkbox" class="tgl" id="jasa">
+        <label for="jasa"><b>외고 · 국제고 · 자사고에도 함께 지원합니다</b>
+          <span>1지망은 지원한 외고 · 국제고 · 자사고로 자동 설정되고, 일반고는 2지망부터 끝지망까지 모두 적습니다</span></label>
+      </div>
+      <div class="stage">
+        <div class="st"><b>학군내 배정 — 의정부 학군</b><span>1지망부터 끝지망까지 모두 필수 · 선복수지원 후추첨</span></div>
+        <div class="slots" id="slots"></div>
+      </div>
+      <div class="actions">
+        <button class="btn primary" id="check" type="button">확인하기</button>
+        <button class="btn" id="byDist" type="button">가까운 순으로 채우기</button>
+        <button class="btn ghost" id="reset" type="button">모두 지우기</button>
+      </div>
+    </div>
+
+    <div class="card panel">
+      <h3>학교 목록</h3>
+      <p class="sub" id="chipsLead">눌러서 넣거나 끌어다 놓으세요.</p>
+      <div id="chipGroups"></div>
+    </div>
+  </div>
+
+  <div class="card result" id="result" style="margin-top:16px" aria-live="polite">
+    <div class="empty">아직 확인하지 않았습니다. 지망 학교를 적고 <b>확인하기</b>를 눌러 보세요.</div>
+  </div>
+</section>
+
+<section id="sched">
+  <div class="shead">
+    <div class="snum">3</div>
+    <div>
+      <h2>2027학년도 일정과 배정 규칙</h2>
+      <p>경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」 기준입니다. 일정은 상황에 따라 바뀔 수 있으니 학교 안내도 함께 확인하세요.</p>
+    </div>
+  </div>
+  <div class="card" style="padding:8px 22px 14px">
+    <ul class="tlbig">
+      <li><span class="d mono">2026. 9. 30. ~ 11. 27.</span><span class="t">배정 방안 온라인 설명회</span>
+        <span class="n">유튜브 경기고입TV에서 학군별 영상을 볼 수 있습니다. 아래 '자료 출처'에 의정부 학군 영상 링크가 있습니다.</span></li>
+      <li><span class="d mono">2026. 12. 4.(금) ~ 10.(목)</span><span class="t">원서 교부 · 접수</span>
+        <span class="n">중학교에서 온라인 원서를 작성 · 출력해 의정부교육지원청에 학교 단위로 제출합니다. 마감은 12. 10.(목) 17시이며, 마감 후에는 취소할 수 없습니다.</span></li>
+      <li><span class="d mono">2026. 12. 9.(수) 오후</span><span class="t">녹양중 원서 제출일</span>
+        <span class="n">의정부학군 원서 접수 일정표의 녹양중 · 동암중 · 발곡중 제출 시간입니다. 그 전에 학교에서 지망 순위를 받으니, 담임 선생님 안내 날짜를 확인하세요.</span></li>
+      <li><span class="d mono">2027. 1. 6.(수)</span><span class="t">배정대상자 발표</span>
+        <span class="n">내신 200점으로 의정부 학군 모집 정원만큼 선발된 학생이 발표됩니다. 출신 중학교와 고등학교 입학 · 전학 포털(SATP)에서 확인합니다.</span></li>
+      <li><span class="d mono">2027. 1. 22.(금)</span><span class="t">배정 학교 발표</span>
+        <span class="n">원서에 적은 학생 휴대폰으로 문자가 오고, 출신 중학교와 SATP에서도 확인할 수 있습니다.</span></li>
+      <li><span class="d mono">2027. 1. 25.(월) ~ 27.(수)</span><span class="t">배정 학교 등록</span>
+        <span class="n">1. 25.(월) 10시에 등록 안내 예비소집이 있습니다(학교마다 다를 수 있음).</span></li>
+      <li><span class="d mono">2027. 2. 4.(목)</span><span class="t">추가 배정자 발표</span>
+        <span class="n">미등록자가 생겼을 때만 내신 차순위자로 추가 배정합니다. 평준화 일반고는 추가 모집이 없습니다.</span></li>
+    </ul>
+  </div>
+  <div class="rules">
+    <div class="card rule">
+      <h4>1지망부터 끝지망까지 모두 적습니다</h4>
+      <p>의정부 학군은 구역이 없어 <span class="k">학군의 모든 일반고</span>에 순위를 매깁니다. 다른 학군처럼 5개교만 고르는 것이 아닙니다. <span class="k">남학생 12지망</span>(공학 10 + 남고 2), <span class="k">여학생 11지망</span>(공학 10 + 여고 1)입니다.</p>
+      <span class="src">근거: 학생 배정 방안 51쪽, 전형 계획 [별표 1]</span>
+    </div>
+    <div class="card rule">
+      <h4>배정은 이렇게 됩니다</h4>
+      <p>학교마다 <span class="k">그 학교를 1지망한 학생</span>부터 추첨해 채웁니다. 1지망자가 정원보다 적으면 모두 배정되고, 남은 자리는 <span class="k">2지망자, 3지망자 … 끝지망자</span> 순으로 추첨해 채웁니다. 학교별 배정 인원은 모집 정원 × 학군 지원율입니다.</p>
+      <span class="src">근거: 학생 배정 방안 9쪽 · 51~52쪽</span>
+    </div>
+    <div class="card rule">
+      <h4>주소는 고려하지 않습니다</h4>
+      <p>근거리 배정이 아닙니다. 집에서 가까워도 지망 순위와 추첨에 따라 다른 학교에 배정될 수 있으니, <span class="k">실제로 다니고 싶은 순서대로</span> 적고 통학 시간도 함께 따져 보세요.</p>
+      <span class="src">근거: 학생 배정 방안 상담 안내 질의 4</span>
+    </div>
+    <div class="card rule">
+      <h4>내신 200점으로 배정대상자 선발</h4>
+      <p>먼저 중학교 내신(200점 만점)으로 학군 모집 정원만큼 <span class="k">배정대상자</span>를 뽑습니다(남녀 구분 없음). 2027학년도 의정부 학군 모집 정원은 <span class="k">126학급 3,189명</span>입니다.</p>
+      <span class="src">근거: 전형 계획 15쪽 · 27쪽</span>
+    </div>
+    <div class="card rule">
+      <h4>외고 · 국제고 · 자사고 함께 지원 시</h4>
+      <p>원서에서 '외고/국제고/자사고 지원자'에 체크하면 <span class="k">1지망이 그 학교로 자동 설정</span>되고, <span class="k">2지망부터 끝지망까지</span> 학군의 일반고 전체를 적습니다. 외고 등과 평준화 일반고 1지망에 동시에 지원하면 <span class="k">이중지원으로 둘 다 불합격</span> 처리됩니다.</p>
+      <span class="src">근거: 전형 계획 35~36쪽</span>
+    </div>
+    <div class="card rule">
+      <h4>전기고 합격자는 지원할 수 없습니다</h4>
+      <p>과학고 · 예술고 · 체육고 · 마이스터고 · 특성화고 · 일반고 특성화학과에 합격한 학생(등록 포기 포함)은 평준화 일반고에 지원할 수 없습니다. 전기고에 <span class="k">불합격</span>했다면 원서를 내면 됩니다.</p>
+      <span class="src">근거: 전형 계획 8쪽 · 10쪽 · 20쪽</span>
+    </div>
+  </div>
+  <div class="disclaim">
+    <b>이 페이지는 연습용입니다.</b> 입력한 지망 학교와 집 주소는 학교에 전달되거나 저장되지 않습니다. 집 주소는 길찾기 좌표를 찾을 때만 지도 검색 서비스(OpenStreetMap)로 보내집니다. 실제 지망 학교는 학교에서 배부하는 원서에 작성해 주십시오. 세부 사항은 담임 선생님 또는 진로진학상담부에 문의해 주세요.
+  </div>
+</section>
+</div>
+
+<footer><div class="wrap">
+  <p>녹양중학교 3학년 · 2027학년도 고등학교 입학 안내</p>
+  <p>자료 출처 — 경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」(2026. 10.) · 「2027학년도 경기도 고교 평준화 학군 학생 배정 방안」(2026. 8.), 배정 방안 설명회(<a href="https://youtu.be/q5RQYyAREuk" target="_blank" rel="noopener">의정부 학군 영상</a> · <a href="https://www.youtube.com/watch?v=eJ6E0p8OYCg" target="_blank" rel="noopener">전체 공통 영상</a>), <a href="https://satp.goe.go.kr" target="_blank" rel="noopener">경기도 고등학교 입학 · 전학 포털</a>, 교육부 NEIS 교육정보 개방 포털(학교 기본정보), 학교알리미 공시정보(학생 · 학급 현황, 졸업생 진로 현황), OpenStreetMap(학교 좌표)</p>
+  <p id="dataDate"></p>
+</div></footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ===================== 설정 ===================== */
+var DATA_VERSION = "2026-11-16b";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
+var DEFAULT = { sex:"남" };
+// 2027학년도 학교별 모집 현황 [학급, 정원, 체육특기자 종목] — 해마다 전형 계획으로 갱신하세요
+// 근거: 경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」 27쪽
+var ADMIT_YEAR = 2027;
+var ADMIT = {
+  "경민고등학교":[10,240,"유도 35"], "동국대학교사범대학부속영석고등학교":[10,260,""], "발곡고등학교":[10,250,"검도 7"],
+  "부용고등학교":[11,286,"복싱 4"], "상우고등학교":[10,260,""], "송양고등학교":[12,312,""], "송현고등학교":[11,297,"사격 3, 컬링 4"],
+  "의정부고등학교":[9,216,"컬링 4, 빙상 2"], "의정부광동고등학교":[9,216,""], "의정부여자고등학교":[8,192,"핸드볼 4, 빙상 5"],
+  "호원고등학교":[10,240,"배드민턴 5"], "효자고등학교":[10,270,""], "훈민고등학교":[6,150,""]
+};
+var AUTONOMOUS = ["의정부고등학교","의정부여자고등학교"];   // 자율형 공립고 (평준화 배정 대상)
+var store = {
+  get:function(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
+  set:function(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+var P = store.get("ujb-profile") || {};
+var profile = { sex: (P.sex==="여"||P.sex==="남") ? P.sex : DEFAULT.sex };
+
+/* ===================== 유틸 ===================== */
+function $(s){ return document.querySelector(s); }
+function esc(v){ return String(v==null?"":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function km(a, b){
+  if(!a || !b || a.lat==null || b.lat==null) return null;
+  var R = 6371, r = Math.PI/180, dLat = (b.lat-a.lat)*r, dLng = (b.lng-a.lng)*r;
+  var h = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dLng/2)*Math.sin(dLng/2);
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+function kmLabel(d){ return d==null ? "-" : d.toFixed(1) + "km"; }
+
+/* ===================== 데이터 ===================== */
+var SCHOOLS = [], byId = {}, DATA = {}, MID = null;
+
+function shortName(full){
+  if(full.indexOf("영석")>-1) return "영석고";
+  return full.replace("여자고등학교","여고").replace("고등학교","고");
+}
+function prep(s){
+  var sex = s.COEDU_SC_NM==="남" ? "남" : (s.COEDU_SC_NM==="여" ? "여" : "공학");
+  // admin: 평준화 학군 배정 일반고 / early: 전기고(특성화고 · 특목고)
+  var sel = s.HS_SC_NM==="일반고" ? "admin" : "early";
+  var o = {
+    id:s.SD_SCHUL_CODE, n:shortName(s.SCHUL_NM), full:s.SCHUL_NM, sex:sex, sel:sel,
+    est:s.FOND_SC_NM, type:s.HS_SC_NM, detail:s.SPCLY_PURPS_HS_ORD_NM||"",
+    addr:s.ORG_RDNMA, tel:s.ORG_TELNO, url:s.HMPG_ADRES ? (/^https?:/.test(s.HMPG_ADRES)?s.HMPG_ADRES:"http://"+s.HMPG_ADRES) : "",
+    lat:s.lat, lng:s.lng, stats:s.stats||null, career:s.career||[],
+    admit:ADMIT[s.SCHUL_NM]||null, auto:AUTONOMOUS.indexOf(s.SCHUL_NM)>-1,
+    opens:(s.FOND_YMD && s.FOND_YMD > DATA.updated.replace(/-/g,"")) ? s.FOND_YMD : ""   // 아직 문을 열지 않은 학교
+  };
+  o.dist = km(MID, o);
+  return o;
+}
+function sexOk(s){ return s.sex==="공학" || s.sex===profile.sex; }
+// 색 분류: b 남, c 공학, g 여, x 지원 불가(성별)
+function kind(s){
+  if(!sexOk(s)) return "x";
+  return s.sex==="남" ? "b" : (s.sex==="여" ? "g" : "c");
+}
+function colorOf(k){ return {b:"var(--boy)",c:"var(--co)",g:"var(--girl)",x:"var(--off)"}[k]; }
+function selLabel(s){ return s.sel==="admin" ? "의정부 학군 평준화 배정 (선복수지원 후추첨)" : "전기 모집 · 학교별 선발"; }
+function typeLabel(s){ return s.auto ? "일반고 (자율형 공립고)" : s.type + (s.detail ? " (" + s.detail + ")" : ""); }
+function nf(n){ return n==null ? "-" : Number(n).toLocaleString("ko-KR"); }
+function openLabel(s){ return s.opens ? s.opens.slice(0,4) + "년 " + (+s.opens.slice(4,6)) + "월 개교" : ""; }
+function sexLabel(s){ return s.sex==="남" ? "남자고등학교" : (s.sex==="여" ? "여자고등학교" : "남녀공학"); }
+function stuLabel(){ return profile.sex==="남" ? "남학생" : "여학생"; }
+function eligible(){
+  return SCHOOLS.filter(function(s){ return s.sel==="admin" && sexOk(s); })
+    .sort(function(a,b){ return (a.dist||0)-(b.dist||0); });
+}
+
+/* ===================== 내 조건 ===================== */
+var sexSel = $("#pfSex");
+sexSel.value = profile.sex;
+sexSel.addEventListener("change", function(){
+  profile.sex = sexSel.value; store.set("ujb-profile", profile);
+  renderAll();
+});
+
+function renderHeader(){
+  var gen = SCHOOLS.filter(function(s){ return s.sel==="admin"; });
+  var cnt = { 남:0, 공학:0, 여:0 };
+  gen.forEach(function(s){ cnt[s.sex]++; });
+  var early = SCHOOLS.filter(function(s){ return s.sel==="early"; }).length;
+  var other = profile.sex==="남" ? "여" : "남";
+  var h = "";
+  h += '<span class="cnt ' + (profile.sex==="남"?"b":"g") + '"><b>' + cnt[profile.sex] + '</b> ' + (profile.sex==="남"?"남자":"여자") + '고등학교</span>';
+  h += '<span class="cnt c"><b>' + cnt["공학"] + '</b> 남녀공학</span>';
+  h += '<span class="cnt e"><b>' + early + '</b> 전기고 (특성화 · 과학고)</span>';
+  h += '<span class="cnt x"><b>' + cnt[other] + '</b> ' + (other==="남"?"남자":"여자") + '고등학교 · 지원 불가</span>';
+  $("#counts").innerHTML = h;
+  var lg = '<span class="lg m"><i></i>녹양중학교</span>'
+         + '<span class="lg ' + (profile.sex==="남"?"b":"g") + '"><i></i>' + (profile.sex==="남"?"남자":"여자") + '고등학교</span>'
+         + '<span class="lg c"><i></i>남녀공학</span>'
+         + '<span class="lg e"><i></i>테두리: 전기고</span>'
+         + '<span class="lg x"><i></i>' + (other==="남"?"남자":"여자") + '고등학교 (지원 불가)</span>';
+  $("#legend").innerHTML = lg;
+}
+
+/* ===================== 지도 ===================== */
+var NS = "http://www.w3.org/2000/svg";
+function el(t, a){ var e = document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); return e; }
+var mroot = $("#markers"), mbg = $("#mapbg");
+var W = 600, H = 420, PAD = 46;
+
+function mapSchools(){
+  var early = $("#showEarly").checked;
+  return SCHOOLS.filter(function(s){ return s.lat!=null && (s.sel!=="early" || early); });
+}
+function renderMap(){
+  mroot.innerHTML = ""; mbg.innerHTML = "";
+  // 좁은 화면(휴대폰)은 세로로 긴 캔버스를 써서 글자가 작아지지 않게 함
+  var svg = $("#svgmap"), narrow = (svg.parentNode.clientWidth || 600) < 560;
+  W = narrow ? 400 : 600; PAD = narrow ? 38 : 46;
+  var list = mapSchools();
+  if(MID && MID.lat!=null) list = list.concat([MID]);
+  if(!list.length){ return; }
+  var lat0 = list.reduce(function(a,s){ return a+s.lat; },0)/list.length;
+  var k = Math.cos(lat0*Math.PI/180);
+  var xs = list.map(function(s){ return s.lng*k; }), ys = list.map(function(s){ return -s.lat; });
+  var minX=Math.min.apply(null,xs), maxX=Math.max.apply(null,xs), minY=Math.min.apply(null,ys), maxY=Math.max.apply(null,ys);
+  var dx = Math.max(maxX-minX,1e-4), dy = Math.max(maxY-minY,1e-4);
+  var fs = 14.5, lh = 24;
+
+  // 이름표가 모두 들어갈 때까지 세로 간격을 조금씩 늘려 가며 배치를 시도한다
+  function layout(stretch){
+    var scX = (W-PAD*2-60)/dx, scY, H2;
+    if(narrow){
+      scY = Math.min((600-PAD*2-20)/dy, scX*2.2) * stretch;
+      H2 = Math.round(Math.max(dy*scY + PAD*2 + 30, 380));
+    } else {
+      H2 = Math.round(Math.min(Math.max(dy*scX + PAD*2 + 30, 340), 520));
+      scX = scY = Math.min(scX, (H2-PAD*2)/dy);
+      if(stretch > 1){ scY = scY*stretch; H2 = Math.round(dy*scY + PAD*2 + 30); }
+    }
+    // 왼쪽 위 '의정부 학군' 글자 자리만큼 위쪽을 비운다 (녹양중이 학군 북서쪽 끝에 있어 겹치기 쉬움)
+    H2 += 44;
+    var ox = (W - dx*scX)/2, oy = (H2 - 44 - dy*scY)/2 + 44;
+    // 같은 자리(경민 캠퍼스 등)에 있는 학교는 점을 살짝 벌려 모두 보이게
+    var pts = list.map(function(s){ return { s:s, x: ox + (s.lng*k-minX)*scX, y: oy + (-s.lat-minY)*scY }; });
+    pts.forEach(function(p, i){
+      var dup = 0;
+      for(var j=0;j<i;j++){ if(Math.abs(pts[j].x-p.x)<8 && Math.abs(pts[j].y-p.y)<8) dup++; }
+      if(dup){ var a = dup*2.1; p.x += Math.cos(a)*15; p.y += Math.sin(a)*15; }
+    });
+    var placed = [{ x:16, y:20, w:150, h:44 }];
+    pts.forEach(function(p){ placed.push({ x:p.x-9, y:p.y-9, w:18, h:18 }); });
+    function out(r){ return r.x<6 || r.y<6 || r.x+r.w>W-6 || r.y+r.h>H2-6; }
+    function overlaps(r){
+      var n = 0;
+      for(var i=0;i<placed.length;i++){ var q=placed[i]; if(r.x<q.x+q.w && r.x+r.w>q.x && r.y<q.y+q.h && r.y+r.h>q.y) n++; }
+      return n;
+    }
+    function candsOf(p, lw){
+      var cs = [
+        {side:"r", x:p.x+14, y:p.y-lh/2}, {side:"l", x:p.x-14-lw, y:p.y-lh/2},
+        {side:"t", x:p.x-lw/2, y:p.y-14-lh}, {side:"b", x:p.x-lw/2, y:p.y+14}
+      ];
+      [18, -18, 36, -36, 54, -54, 72, -72, 90, -90].forEach(function(d){
+        cs.push({side:"r", x:p.x+14, y:p.y-lh/2+d}, {side:"l", x:p.x-14-lw, y:p.y-lh/2+d});
+      });
+      [30, -30, 56, -56].forEach(function(d){ cs.push({side:d>0?"b":"t", x:p.x-lw/2, y:(d>0 ? p.y+14+d : p.y-14-lh+d)}); });
+      [lw/2+6, -(lw/2+6)].forEach(function(sx){ [0, 26, 52].forEach(function(d){
+        cs.push({side:"b", x:p.x-lw/2+sx, y:p.y+14+d}, {side:"t", x:p.x-lw/2+sx, y:p.y-14-lh-d});
+      }); });
+      [36, 64].forEach(function(gap){ [0, 22, -22].forEach(function(d){
+        cs.push({side:"r", x:p.x+gap, y:p.y-lh/2+d}, {side:"l", x:p.x-gap-lw, y:p.y-lh/2+d});
+      }); });
+      return cs;
+    }
+    // 주변에 학교가 많은 곳(자리 잡기 어려운 학교)부터 이름표를 놓는다
+    pts.forEach(function(p){ p.crowd = pts.filter(function(q){ return Math.abs(q.x-p.x)<90 && Math.abs(q.y-p.y)<60; }).length; });
+    var order = pts.slice().sort(function(a,b){ return (b.crowd-a.crowd) || (a.x-b.x); });
+    var miss = 0;
+    order.forEach(function(p){
+      var lw = Math.max(40, p.s.n.length*fs + 12), cs = candsOf(p, lw), c = null;
+      for(var i=0;i<cs.length;i++){ var r = {x:cs[i].x, y:cs[i].y, w:lw, h:lh}; if(!out(r) && !overlaps(r)){ c = cs[i]; break; } }
+      if(!c){
+        // 빈 자리가 없으면 겹침이 가장 적은 자리라도 쓴다 (이름이 빠지지 않게)
+        miss++; var best = 1e9;
+        cs.forEach(function(cc){
+          var r = {x:cc.x, y:cc.y, w:lw, h:lh}; if(out(r)) return;
+          var area = 0;
+          placed.forEach(function(q){ var ox2 = Math.min(r.x+r.w, q.x+q.w) - Math.max(r.x, q.x), oy2 = Math.min(r.y+r.h, q.y+q.h) - Math.max(r.y, q.y); if(ox2>0 && oy2>0) area += ox2*oy2; });
+          if(area<best){ best=area; c=cc; }
+        });
+      }
+      if(c){ placed.push({x:c.x, y:c.y, w:lw, h:lh}); p.lab = { side:c.side, x:c.x, y:c.y, w:lw }; }
+    });
+    return { H:H2, pts:pts, miss:miss };
+  }
+  var L = null, tries = narrow ? [1, 1.25, 1.5, 1.8, 2.1] : [1, 1.2, 1.4, 1.6, 1.8, 2.1];
+  for(var ti=0; ti<tries.length; ti++){ L = layout(tries[ti]); if(!L.miss) break; }
+  H = L.H;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+
+  // 배경: 학군 영역(부드러운 사각형)
+  mbg.appendChild(el("rect",{ x:8, y:8, width:W-16, height:H-16, rx:18, fill:"var(--land)", stroke:"var(--land-line)", "stroke-width":"1.2", "stroke-dasharray":"6 5" }));
+  var t1 = el("text",{ x:24, y:38, "font-size":"15", "font-weight":"700", fill:"var(--muted)" }); t1.textContent = "의정부 학군"; mbg.appendChild(t1);
+  var t2 = el("text",{ x:24, y:57, "font-size":"12.5", fill:"var(--muted)" }); t2.textContent = "학교를 눌러 보세요"; mbg.appendChild(t2);
+
+  L.pts.slice().sort(function(a,b){ return a.x-b.x; }).forEach(function(p){
+    var s = p.s, isMid = s===MID, kk = isMid ? "m" : kind(s), col = isMid ? "var(--seal)" : colorOf(kk);
+    var c = p.lab, lw = c ? c.w : 0;
+    var g = isMid ? el("g",{ "aria-hidden":"true" })
+                  : el("g",{ "class":"mk", "data-id":s.id, tabindex:"0", role:"button", "aria-label":s.full + " 정보 보기" });
+    if(c){
+      var ax = c.side==="r" ? c.x : (c.side==="l" ? c.x+lw : c.x+lw/2);
+      var ay = c.side==="t" ? c.y+lh : (c.side==="b" ? c.y : c.y+lh/2);
+      g.appendChild(el("line",{ x1:p.x, y1:p.y, x2:ax, y2:ay, stroke:col, "stroke-width":"1.6" }));
+      g.appendChild(el("rect",{ x:c.x, y:c.y, width:lw, height:lh, rx:7, fill:isMid?"var(--seal)":"var(--surface)", stroke:col, "stroke-width":"1.5" }));
+      var t = el("text",{ x:c.x+lw/2, y:c.y+lh/2+fs*0.36, "font-size":String(fs), "font-weight":"900", fill:isMid?"var(--seal-ink)":col, "text-anchor":"middle", "pointer-events":"none" });
+      t.textContent = s.n; g.appendChild(t);
+    }
+    if(isMid){
+      g.appendChild(el("rect",{ x:p.x-7, y:p.y-7, width:14, height:14, rx:3, fill:col, stroke:"var(--surface)", "stroke-width":"2.2", transform:"rotate(45 " + p.x + " " + p.y + ")" }));
+    } else {
+      var ringCol = s.sel==="early" ? "var(--early)" : "var(--surface)";
+      g.appendChild(el("circle",{ "class":"ring", cx:p.x, cy:p.y, r:13 }));
+      g.appendChild(el("circle",{ "class":"dot", cx:p.x, cy:p.y, r:(kk==="x"?6:7.5), fill:col, stroke:ringCol, "stroke-width":(s.sel==="admin"?2.2:3.4) }));
+      g.appendChild(el("circle",{ "class":"hit", cx:p.x, cy:p.y, r:16 }));
+      var tt = el("title",{}); tt.textContent = s.full; g.appendChild(tt);
+    }
+    mroot.appendChild(g);
+  });
+  markSel();
+}
+mroot.addEventListener("click", function(e){ var g = e.target.closest(".mk"); if(g) showDetail(g.getAttribute("data-id")); });
+mroot.addEventListener("keydown", function(e){
+  if(e.key!=="Enter" && e.key!==" ") return;
+  var g = e.target.closest(".mk"); if(!g) return; e.preventDefault(); showDetail(g.getAttribute("data-id"));
+});
+$("#showEarly").addEventListener("change", renderMap);
+var lastNarrow = null, rzT = null;
+window.addEventListener("resize", function(){
+  clearTimeout(rzT);
+  rzT = setTimeout(function(){
+    var n = ($("#svgmap").parentNode.clientWidth || 600) < 560;
+    if(n !== lastNarrow && SCHOOLS.length){ lastNarrow = n; renderMap(); }
+  }, 150);
+});
+var selId = null;
+function markSel(){ Array.prototype.forEach.call(document.querySelectorAll(".mk"), function(g){ g.classList.toggle("sel", g.getAttribute("data-id")===selId); }); }
+
+/* ===================== 녹양중에서 가까운 학교 ===================== */
+function renderNear(){
+  var gen = SCHOOLS.filter(function(s){ return s.sel==="admin"; }).sort(function(a,b){ return (a.dist||0)-(b.dist||0); });
+  var max = Math.max.apply(null, gen.map(function(s){ return s.dist||0; })) || 1;
+  var h = '<tr><th>순</th><th class="l">학교</th><th class="l">구분</th><th class="l">직선거리</th><th>' + ADMIT_YEAR + ' 모집</th><th>재학생</th><th>지원</th></tr>';
+  gen.forEach(function(s, i){
+    var ok = sexOk(s);
+    h += '<tr class="rowlink' + (ok ? '' : ' off') + '" data-row="' + esc(s.id) + '" tabindex="0">'
+      + '<td>' + (i+1) + '</td><td class="l"><b>' + esc(s.n) + '</b>' + (s.opens ? ' <span class="badge n">신설</span>' : '') + '</td><td class="l">' + esc(sexLabel(s)) + '</td>'
+      + '<td class="l"><span class="bar" style="width:' + Math.round((s.dist||0)/max*60) + 'px"></span>' + kmLabel(s.dist) + '</td>'
+      + '<td>' + (s.admit ? nf(s.admit[1]) + '명' : '-') + '</td>'
+      + '<td>' + (s.stats ? nf(s.stats.students) + '명' : '-') + '</td>'
+      + '<td>' + (ok ? '<span class="badge ok">가능</span>' : '<span class="badge no">불가</span>') + '</td></tr>';
+  });
+  $("#nearTbl").innerHTML = h;
+}
+$("#nearTbl").addEventListener("click", function(e){
+  var r = e.target.closest("[data-row]"); if(!r) return;
+  showDetail(r.getAttribute("data-row")); $("#detail").scrollIntoView({behavior:"smooth", block:"start"});
+});
+$("#nearTbl").addEventListener("keydown", function(e){
+  if(e.key!=="Enter") return; var r = e.target.closest("[data-row]"); if(r){ e.preventDefault(); r.click(); }
+});
+
+/* ===================== 검색 ===================== */
+var qIn = $("#q"), sugg = $("#sugg");
+qIn.addEventListener("input", function(){
+  var v = qIn.value.replace(/\s+/g,"");
+  if(!v){ sugg.hidden = true; sugg.innerHTML = ""; return; }
+  var r = SCHOOLS.filter(function(s){ return s.full.indexOf(v)>-1 || s.n.indexOf(v)>-1; }).slice(0,10);
+  sugg.innerHTML = r.length ? r.map(function(s){
+    return '<li><button type="button" data-id="' + esc(s.id) + '"><b>' + esc(s.full) + '</b><small>' + esc(typeLabel(s)) + ' · ' + esc(sexLabel(s)) + ' · 녹양중에서 ' + kmLabel(s.dist) + '</small></button></li>';
+  }).join("") : '<li><button type="button" disabled>검색 결과가 없습니다</button></li>';
+  sugg.hidden = false;
+});
+sugg.addEventListener("click", function(e){
+  var b = e.target.closest("button[data-id]"); if(!b) return;
+  sugg.hidden = true; qIn.value = "";
+  var s = byId[b.getAttribute("data-id")];
+  if(s && s.sel==="early" && !$("#showEarly").checked){ $("#showEarly").checked = true; renderMap(); }
+  showDetail(b.getAttribute("data-id"));
+  $("#detail").scrollIntoView({behavior:"smooth", block:"start"});
+});
+document.addEventListener("click", function(e){ if(!e.target.closest(".search")) sugg.hidden = true; });
+qIn.addEventListener("keydown", function(e){
+  if(e.key==="Enter"){ var b = sugg.querySelector("button[data-id]"); if(b){ e.preventDefault(); b.click(); } }
+  if(e.key==="Escape"){ sugg.hidden = true; }
+});
+
+/* ===================== 학교 상세 ===================== */
+var detail = $("#detail");
+var homeAddr = "", homePos = null, homeFor = "";   // 메모리에만 보관
+
+function noData(s, what){
+  return '<div class="empty">' + (s.opens ? openLabel(s) + ' 예정인 학교라 아직 공시된 ' + what + ' 정보가 없습니다.' : what + ' 정보가 없습니다. 학교알리미에서 확인해 주세요.') + '</div>';
+}
+function statsHtml(s){
+  var st = s.stats;
+  if(!st) return noData(s, "학생 · 학급");
+  var rows = [0,1,2].map(function(i){
+    var g = (st.byGrade||[])[i] || {}, t = (g.boys==null||g.girls==null) ? null : g.boys + g.girls;
+    return '<tr><td>' + (i+1) + '학년</td><td>' + nf((st.classesByGrade||[])[i]) + '</td><td>' + nf(g.boys) + '</td><td>' + nf(g.girls) + '</td><td>' + nf(t) + '</td></tr>';
+  }).join("");
+  var sp = st.special && (st.special.classes || st.special.students)
+    ? '<tr><td>특수학급</td><td>' + nf(st.special.classes) + '</td><td></td><td></td><td>' + nf(st.special.students) + '</td></tr>' : "";
+  var g1 = (st.byGrade||[])[0] || {};
+  return '<div class="stats">'
+    + '<div class="stat"><b>' + nf(st.students) + '<small>명</small></b><span>전체 학생</span></div>'
+    + '<div class="stat"><b>' + nf(st.classes) + '<small>학급</small></b><span>전체 학급</span></div>'
+    + '<div class="stat"><b>' + nf(st.perClass) + '<small>명</small></b><span>학급당 학생</span></div>'
+    + '<div class="stat"><b>' + nf(g1.boys!=null ? g1.boys + g1.girls : null) + '<small>명</small></b><span>1학년 학생</span></div></div>'
+    + '<div class="tblwrap"><table class="tbl"><tr><th>학년</th><th>학급</th><th>남</th><th>여</th><th>학생</th></tr>' + rows + sp
+    + '<tr class="sum"><th>합계</th><td>' + nf(st.classes) + '</td><td></td><td></td><td>' + nf(st.students) + '</td></tr></table></div>'
+    + '<p class="fine">학교알리미 「학년별 · 학급별 학생수」 공시 (' + esc(st.year) + '년 4월 1일 기준, ' + esc(DATA.statsUpdated||"") + ' 수집). 합계에는 특수학급 학생이 빠져 있습니다.</p>';
+}
+function pct(a, b){ return (a==null || !b) ? "-" : (Math.round(a/b*1000)/10).toFixed(1); }
+function careerHtml(s){
+  var cs = s.career || [];
+  if(!cs.length) return noData(s, "졸업생 진로");
+  var c = cs[0];
+  var tiles = [[pct(c.college4, c.grads), "4년제 대학"], [pct(c.advance, c.grads), "대학 진학(전문대 · 국외 포함)"], [pct(c.college2, c.grads), "전문대학"], [pct(c.etc, c.grads), "기타(재수 등)"]];
+  var h = '<div class="stats">' + tiles.map(function(t){ return '<div class="stat"><b>' + t[0] + '<small>%</small></b><span>' + t[1] + '</span></div>'; }).join("") + '</div>';
+  h += '<div class="tblwrap"><table class="tbl"><tr><th>졸업</th><th>졸업생</th><th>4년제</th><th>전문대</th><th>국외</th><th>취업</th><th>기타</th></tr>';
+  cs.forEach(function(r){
+    h += '<tr><td>' + r.year + '. 2.</td><td>' + nf(r.grads) + '</td>'
+      + [r.college4, r.college2, r.abroad, r.job, r.etc].map(function(v){ return '<td>' + nf(v) + '<small class="pc"> ' + pct(v, r.grads) + '%</small></td>'; }).join("") + '</tr>';
+  });
+  h += '</table></div>';
+  h += '<p class="fine">학교알리미 「졸업생의 진로 현황」 공시 (진학은 대학에 등록한 학생 기준). \'기타\'에는 재수 · 군 입대 등 진학도 취업도 하지 않은 졸업생이 들어가, 재수생이 많은 학교일수록 4년제 비율이 실제보다 낮게 보입니다.</p>';
+  return h;
+}
+
+function to3857(p){
+  var x = p.lng*20037508.34/180, y = Math.log(Math.tan((90+p.lat)*Math.PI/360))/(Math.PI/180)*20037508.34/180;
+  return x.toFixed(1) + "," + y.toFixed(1);
+}
+function routeButtons(from, fromName, s){
+  var fn = encodeURIComponent(fromName), nm = encodeURIComponent(s.full), sp = { lat:s.lat, lng:s.lng };
+  var nv = function(m){ return "https://map.naver.com/p/directions/" + to3857(from) + "," + fn + "/" + to3857(sp) + "," + nm + "/-/" + m; };
+  var kakao = "https://map.kakao.com/link/from/" + fn + "," + from.lat + "," + from.lng + "/to/" + nm + "," + s.lat + "," + s.lng;
+  return '<div class="btnrow">'
+    + '<a class="btn naver" target="_blank" rel="noopener" href="' + nv("transit") + '">네이버 대중교통</a>'
+    + '<a class="btn naver" target="_blank" rel="noopener" href="' + nv("walk") + '">네이버 도보</a>'
+    + '<a class="btn kakao" target="_blank" rel="noopener" href="' + kakao + '">카카오맵 길찾기</a></div>';
+}
+
+function showDetail(id){
+  var s = byId[id]; if(!s) return;
+  selId = id; markSel();
+  var ok = sexOk(s);
+  var h = '<div class="dh"><h3>' + esc(s.n) + '</h3>';
+  h += '<span class="badge ' + (s.sex==="남"?"b":(s.sex==="여"?"g":"c")) + '">' + sexLabel(s) + '</span>';
+  h += '<span class="badge ' + (s.sel==="early"?"e":"n") + '">' + esc(typeLabel(s)) + '</span>';
+  h += '<span class="badge ' + (ok?"ok":"no") + '">' + (ok ? "지원 가능" : stuLabel() + " 지원 불가") + '</span>';
+  if(s.opens) h += '<span class="badge w">' + esc(openLabel(s)) + '</span>';
+  h += '</div><p class="full">' + esc(s.full) + '</p>';
+  h += '<dl class="facts">';
+  h += '<dt>소재지</dt><dd>' + esc(s.addr) + '</dd>';
+  h += '<dt>설립 · 유형</dt><dd>' + esc(s.est) + ' · ' + esc(typeLabel(s)) + '</dd>';
+  h += '<dt>선발 방법</dt><dd>' + esc(selLabel(s)) + '</dd>';
+  if(s.admit) h += '<dt>' + ADMIT_YEAR + ' 모집</dt><dd>' + nf(s.admit[0]) + '학급 ' + nf(s.admit[1]) + '명'
+    + (s.admit[2] ? ' <span class="fine" style="display:inline">(체육특기자 ' + esc(s.admit[2]) + '명 포함)</span>' : '') + '</dd>';
+  var how;
+  if(!ok) how = stuLabel() + '은 지원할 수 없어 지망 칸에 적을 수 없습니다.';
+  else if(s.sel==="early") how = '<b>전기고</b>입니다. 평준화 일반고 지망 칸에 적지 않고 학교별로 따로 지원합니다. 전기고에 합격하면 평준화 일반고에는 지원할 수 없습니다.';
+  else how = '의정부 학군 지망 칸에 적습니다. 적은 순위를 반영해 추첨으로 배정됩니다.';
+  h += '<dt>지원 방식</dt><dd>' + how + '</dd>';
+  h += '<dt>녹양중에서</dt><dd>직선거리 ' + kmLabel(s.dist) + '</dd>';
+  h += '<dt>전화</dt><dd>' + esc(s.tel || "-") + '</dd>';
+  h += '</dl><div class="btnrow">';
+  if(s.url) h += '<a class="btn primary" href="' + esc(s.url) + '" target="_blank" rel="noopener">학교 홈페이지 열기 ↗</a>';
+  if(ok && s.sel==="admin") h += '<button class="btn" type="button" data-put="' + esc(s.id) + '">지망 칸에 넣어 보기</button>';
+  h += '</div>';
+
+  h += '<div class="dgrid">';
+  h += '<div class="dsec"><h4>학년별 학생 · 학급 현황' + (s.stats ? ' <small>' + esc(s.stats.year) + '년 4월 1일 기준</small>' : '') + '</h4>' + statsHtml(s) + '</div>';
+  var lastCareer = (s.career || [])[0];
+  h += '<div class="dsec"><h4>졸업생 진학 현황' + (lastCareer ? ' <small>' + lastCareer.year + '년 2월 졸업생 기준 비율</small>' : '') + '</h4>' + careerHtml(s) + '</div>';
+  if(s.lat!=null && MID && MID.lat!=null){
+    h += '<div class="dsec"><h4>녹양중에서 가는 길 <small>네이버지도 · 카카오맵에서 열립니다</small></h4>'
+       + routeButtons(MID, MID.full, s)
+       + '<p class="fine">새 창에서 소요 시간과 노선이 나옵니다.</p></div>';
+  }
+  h += '<div class="dsec"><h4>집에서 가는 길</h4>'
+     + '<form class="addrrow" id="addrForm"><input id="addr" type="text" placeholder="예) 경기도 의정부시 체육로 187" value="' + esc(homeAddr) + '" aria-label="우리 집 주소">'
+     + '<button class="btn" type="submit">길찾기</button></form><div id="route"><p class="fine" style="margin:0">집 주소를 넣으면 길찾기 버튼이 나옵니다. 도로명 주소로 넣으면 잘 찾습니다.</p></div></div>';
+  h += '</div>';
+  detail.innerHTML = h;
+
+  $("#addrForm").addEventListener("submit", function(e){ e.preventDefault(); route(s); });
+  if(homePos) route(s, true);
+}
+document.addEventListener("click", function(e){
+  var b = e.target.closest("[data-put]");
+  if(b){ assign(b.getAttribute("data-put")); $("#sim").scrollIntoView({behavior:"smooth", block:"start"}); }
+});
+
+/* ---- 길찾기 ---- */
+function geocode(addr){
+  var clean = addr.replace(/\(.*?\)/g,"").trim();
+  var tries = [clean, clean.replace(/^경기도\s*/,""), /의정부/.test(clean) ? "" : "의정부시 " + clean, clean.replace(/\s+\d+(-\d+)?\s*(번지|호)?\s*$/,"")];
+  tries = tries.filter(function(t,i){ return t && tries.indexOf(t)===i; });
+  var i = 0;
+  function next(){
+    if(i>=tries.length) return Promise.resolve(null);
+    var u = new URL("https://nominatim.openstreetmap.org/search");
+    var p = { format:"json", limit:"1", countrycodes:"kr", "accept-language":"ko", q:tries[i++] };
+    Object.keys(p).forEach(function(k){ u.searchParams.set(k, p[k]); });
+    return fetch(u).then(function(r){ return r.json(); }).then(function(j){
+      if(j[0]) return { lat:+j[0].lat, lng:+j[0].lon };
+      return new Promise(function(res){ setTimeout(res, 1100); }).then(next);
+    }).catch(function(){ return new Promise(function(res){ setTimeout(res, 1100); }).then(next); });
+  }
+  return next();
+}
+function route(s, reuse){
+  var box = document.getElementById("route"), inp = document.getElementById("addr");
+  var addr = inp.value.trim();
+  if(!addr){ box.innerHTML = '<p class="fine" style="margin:0">집 주소를 입력해 주세요.</p>'; return; }
+  if(s.lat==null){ box.innerHTML = '<p class="fine" style="margin:0">이 학교의 위치 좌표가 없어 링크를 만들 수 없습니다.</p>'; return; }
+  var p = (reuse || addr===homeFor) && homePos ? Promise.resolve(homePos) : geocode(addr);
+  if(!(reuse || addr===homeFor)) box.innerHTML = '<div class="empty">주소를 찾는 중…</div>';
+  p.then(function(h){
+    if(selId!==s.id) return;
+    if(!h){ box.innerHTML = '<p class="fine" style="margin:0;color:var(--bad)">주소를 찾지 못했습니다. "의정부시 체육로 187"처럼 도로명 주소로 다시 입력해 보세요.</p>'; return; }
+    homeAddr = addr; homeFor = addr; homePos = h;
+    box.innerHTML = routeButtons(h, "우리 집", s)
+      + '<p class="fine">새 창에서 소요 시간 · 노선이 나옵니다. 출발지는 입력한 주소 근처로 찍히니 지도에서 확인하세요.</p>';
+  });
+}
+
+/* ===================== 지망 순위 적어 보기 ===================== */
+// 근거: 「2027학년도 경기도 고교 평준화 학군 학생 배정 방안」 51쪽 — 의정부 학군은 학군의 전체 고등학교 지망 순위 작성
+// (남 12지망, 여 11지망). 외고 · 국제고 · 자사고 동시 지원자는 1지망이 그 학교로 자동 설정되고 2지망부터 끝지망까지 작성.
+// slots에는 일반고만 담고, 외고 등 동시 지원이면 화면의 지망 번호를 하나씩 뒤로 민다.
+var slots = [], active = 0;
+function slotEl(i){ return document.querySelector('.slot[data-i="' + i + '"]'); }
+function resizeSlots(){
+  var n = eligible().length;
+  var keep = slots.filter(function(id){ return id && byId[id] && sexOk(byId[id]); });
+  slots = [];
+  for(var i=0;i<n;i++) slots.push(keep[i] || null);
+  active = firstEmpty();
+}
+function firstEmpty(){ for(var i=0;i<slots.length;i++) if(!slots[i]) return i; return -1; }
+function isJasa(){ return $("#jasa").checked; }
+
+function rankOf(i){ return i + 1 + (isJasa() ? 1 : 0); }
+function paint(){
+  var host = $("#slots"), h = "";
+  if(isJasa()) h += '<div class="slot filled skip"><span class="sl">1지망 · 자동 설정</span><span class="sv">지원한 외고 · 국제고 · 자사고</span></div>';
+  slots.forEach(function(id, i){
+    var s = id ? byId[id] : null, r = rankOf(i);
+    var cls = "slot" + (s ? " filled" : "") + (i===active ? " active" : "");
+    h += '<button class="' + cls + '" data-i="' + i + '" type="button"><span class="sl">' + r + '지망' + (i===slots.length-1 ? ' · 끝지망' : '') + '</span>'
+      + (s ? '<span class="sv">' + esc(s.n) + '</span><span class="sd">' + esc(sexLabel(s)) + ' · ' + kmLabel(s.dist) + '</span><span class="x" role="button" aria-label="' + r + '지망 지우기" data-x="' + i + '">×</span>'
+           : '<span class="sv" style="color:var(--muted);font-weight:500">비어 있음</span>')
+      + '</button>';
+  });
+  host.innerHTML = h;
+  $("#simSub").innerHTML = stuLabel() + '은 의정부 학군 일반고 <b>' + slots.length + '개교 전체</b>의 순위를 적습니다'
+    + (isJasa() ? ' (외고 등 1지망 + 일반고 2~' + (slots.length+1) + '지망)' : ' (1~' + slots.length + '지망)') + '. 모든 칸이 필수입니다.';
+  markUsed();
+}
+function markUsed(){
+  Array.prototype.forEach.call(document.querySelectorAll(".chip"), function(c){
+    c.classList.toggle("used", slots.indexOf(c.getAttribute("data-id")) > -1);
+  });
+}
+function assignTo(i, id){
+  if(i<0 || i>=slots.length) return;
+  var s = byId[id]; if(!s || !sexOk(s) || s.sel!=="admin") return;
+  var was = slots.indexOf(id);
+  if(was > -1) slots[was] = slots[i];   // 이미 적은 학교를 옮기면 두 칸을 맞바꾼다
+  slots[i] = id;
+  active = firstEmpty();
+  paint();
+}
+function assign(id){
+  if(slots.indexOf(id) > -1) return;    // 이미 적은 학교 (칸을 옮기려면 끌어다 놓기)
+  var i = active > -1 ? active : firstEmpty();
+  if(i===-1) i = slots.length-1;
+  assignTo(i, id);
+}
+$("#slots").addEventListener("click", function(e){
+  var x = e.target.closest("[data-x]");
+  if(x){ e.stopPropagation(); var xi = +x.getAttribute("data-x"); slots[xi] = null; active = xi; paint(); return; }
+  var b = e.target.closest(".slot"); if(!b) return;
+  active = +b.getAttribute("data-i"); paint();
+});
+$("#slots").addEventListener("dragover", function(e){ var b = e.target.closest(".slot"); if(b){ e.preventDefault(); b.classList.add("over"); } });
+$("#slots").addEventListener("dragleave", function(e){ var b = e.target.closest(".slot"); if(b) b.classList.remove("over"); });
+$("#slots").addEventListener("drop", function(e){
+  var b = e.target.closest(".slot"); if(!b) return; e.preventDefault();
+  assignTo(+b.getAttribute("data-i"), e.dataTransfer.getData("text/plain"));
+});
+$("#reset").addEventListener("click", function(){ slots = slots.map(function(){ return null; }); active = 0; paint(); $("#result").innerHTML = '<div class="empty">아직 확인하지 않았습니다. 지망 학교를 적고 <b>확인하기</b>를 눌러 보세요.</div>'; });
+$("#byDist").addEventListener("click", function(){ slots = eligible().map(function(s){ return s.id; }); active = -1; paint(); });
+$("#jasa").addEventListener("change", paint);
+$("#jeongi").addEventListener("change", paint);
+
+function chipEl(s){
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "chip " + kind(s); b.setAttribute("draggable","true"); b.setAttribute("data-id", s.id);
+  b.title = s.full + " · 녹양중에서 " + kmLabel(s.dist);
+  b.innerHTML = '<i></i>' + esc(s.n) + ' <small>' + kmLabel(s.dist) + '</small>';
+  b.addEventListener("dragstart", function(ev){ ev.dataTransfer.setData("text/plain", s.id); ev.dataTransfer.effectAllowed = "copy"; });
+  b.addEventListener("click", function(){ assign(s.id); });
+  return b;
+}
+function renderChips(){
+  var el2 = eligible();
+  var own = el2.filter(function(s){ return s.sex===profile.sex; });
+  var co = el2.filter(function(s){ return s.sex==="공학"; });
+  var no = SCHOOLS.filter(function(s){ return s.sel==="admin" && !sexOk(s); });
+  var host = $("#chipGroups"); host.innerHTML = "";
+  function group(label, arr, first){
+    var l = document.createElement("div"); l.className = "grouplab" + (first ? " first" : ""); l.textContent = label; host.appendChild(l);
+    var c = document.createElement("div"); c.className = "chips";
+    if(!arr.length){ c.innerHTML = '<span class="empty" style="padding:0">해당 학교가 없습니다.</span>'; }
+    arr.forEach(function(s){ c.appendChild(chipEl(s)); }); host.appendChild(c);
+  }
+  group((profile.sex==="남"?"남자":"여자") + "고등학교", own, true);
+  group("남녀공학 고등학교", co);
+  var p = document.createElement("p"); p.className = "exnote";
+  p.textContent = (no.length ? (profile.sex==="남"?"여자":"남자") + "고등학교 " + no.length + "개교(" + no.map(function(s){ return s.n; }).join(" · ") + ")는 " + stuLabel() + "이 지원할 수 없어 목록에서 뺐습니다. " : "")
+    + "특성화고 · 과학고 같은 전기고는 학교별로 따로 지원하므로 이 목록에 없습니다. 학교 옆 숫자는 녹양중에서의 직선거리입니다.";
+  host.appendChild(p);
+  markUsed();
+}
+
+$("#check").addEventListener("click", function(){
+  var checks = [], level = "ok";
+  function add(c, t){ checks.push([c, t]); if(c==="bad") level = "bad"; else if(c==="warn" && level!=="bad") level = "warn"; }
+  var filled = slots.filter(Boolean), n = filled.length;
+
+  if($("#jeongi").checked){
+    add("bad", "<b>전기고에 합격한 학생은 평준화 일반고에 지원할 수 없습니다.</b> 합격한 전기고에 등록하게 됩니다.");
+  }
+  var first = isJasa() ? "2지망" : "1지망", last = rankOf(slots.length-1) + "지망";
+  if(!n){
+    add("bad", "지망 학교를 하나도 적지 않았습니다. <b>" + first + "부터 " + last + "까지</b> 모두 적어야 합니다.");
+  } else if(n < slots.length){
+    var missing = slots.map(function(id, i){ return id ? null : rankOf(i) + "지망"; }).filter(Boolean);
+    var left = eligible().filter(function(s){ return slots.indexOf(s.id) < 0; }).map(function(s){ return s.n; });
+    add("bad", "빈 칸이 있습니다(<b>" + missing.join(" · ") + "</b>). 의정부 학군은 " + first + "부터 끝지망까지 <b>모든 학교를 빠짐없이</b> 적어야 합니다. 아직 적지 않은 학교: " + esc(left.join(", ")) + ".");
+  } else {
+    add("ok", "의정부 학군 일반고 <b>" + slots.length + "개교 전체</b>의 순위를 " + first + "부터 " + last + "까지 빠짐없이 적었습니다.");
+  }
+  var s1 = byId[slots[0]];
+  if(s1){
+    add("info", first + " 학교(<b>" + esc(s1.n) + "</b>)는 녹양중에서 직선거리 " + kmLabel(s1.dist) + "입니다. 각 학교는 그 학교를 1지망한 학생부터 추첨해 채우므로, <b>앞쪽 지망일수록</b> 배정될 가능성에 큰 영향을 줍니다.");
+  }
+  if(isJasa()) add("info", "원서에서 '외고/국제고/자사고 지원자'에 체크하면 1지망이 그 학교로 자동 설정됩니다. 외고 등과 일반고 1지망에 <b>동시에 지원하면 이중지원</b>으로 둘 다 불합격 처리되니 주의하세요.");
+  var newOne = slots.map(function(id){ return byId[id]; }).filter(function(s){ return s && s.opens; });
+  if(newOne.length) add("info", "새로 문을 여는 학교(" + esc(newOne.map(function(s){ return s.n; }).join(", ")) + ")는 " + esc(openLabel(newOne[0])) + " 예정이라 재학생 · 진학 현황이 아직 없습니다.");
+
+  var head = level==="bad" ? ["v-bad","!","다시 확인이 필요합니다","빨간 항목을 고쳐 보세요."]
+           : level==="warn" ? ["v-warn","?","대체로 괜찮습니다","노란 항목을 한 번 더 확인하세요."]
+           : ["v-ok","✓","지망 순위를 적었습니다","실제 원서도 같은 순서로 적어 보세요."];
+  var ic = { ok:"✓", warn:"!", bad:"✕", info:"i" };
+  var h = '<div class="verdict ' + head[0] + '"><div class="vicon">' + head[1] + '</div><div><h3>' + head[2] + '</h3><p>' + head[3] + '</p></div></div>';
+  h += '<ul class="checks">' + checks.map(function(c){ return '<li class="c-' + c[0] + '"><span class="ic">' + ic[c[0]] + '</span><span>' + c[1] + '</span></li>'; }).join("") + '</ul>';
+  $("#result").innerHTML = h;
+});
+
+/* ===================== 시작 ===================== */
+function renderAll(){
+  renderHeader(); renderMap(); renderNear(); resizeSlots(); renderChips(); paint();
+  if(selId) showDetail(selId);
+}
+fetch("schools.json?v=" + DATA_VERSION).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }).then(function(d){
+  DATA = d;
+  MID = { id:"mid", n:"녹양중", full:d.middle.SCHUL_NM, lat:d.middle.lat, lng:d.middle.lng };
+  SCHOOLS = d.schools.map(prep);
+  SCHOOLS.forEach(function(s){ byId[s.id] = s; });
+  lastNarrow = ($("#svgmap").parentNode.clientWidth || 600) < 560;
+  renderAll();
+  detail.innerHTML = '<div class="empty">지도나 아래 표에서 학교를 누르면 정보가 나옵니다.</div>';
+  $("#dataDate").textContent = "학교 정보 수집일: " + (d.updated || "-");
+}).catch(function(){
+  detail.innerHTML = '<div class="loaderr">학교 정보(schools.json)를 불러오지 못했습니다. 파일을 더블클릭해 열었다면, 이 폴더에서 간이 서버를 켜고 http://localhost:8000 으로 접속해 주세요.</div>';
+});
+
+})();
+</script>
+</body>
+</html>
