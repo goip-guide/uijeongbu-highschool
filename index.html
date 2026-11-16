@@ -417,7 +417,7 @@ footer a{ color:var(--muted); }
     <div class="snum">1</div>
     <div>
       <h2>지도에서 학교 찾기</h2>
-      <p id="mapLead">의정부 학군 일반고 13곳을 좌표대로 표시했습니다. 학교 표시를 누르거나 검색하면 <b>학년별 학생 수</b>, <b>졸업생 진학 현황</b>, <span class="midN">녹양중</span>에서 가는 길이 나옵니다.</p>
+      <p id="mapLead">의정부 학군 일반고 13곳을 좌표대로 표시했습니다. 학교 표시를 누르거나 검색하면 <b>학년별 학생 수</b>, <b>졸업생 진학 현황</b>, <span class="midN">녹양중</span>에서 가는 길이 나옵니다. 특성화고 · 과학고는 아래 체크 상자를 켜면 지도에 나오고, 특성화고는 <b>취업률과 학과별 현황</b>도 볼 수 있습니다.</p>
     </div>
   </div>
 
@@ -571,7 +571,7 @@ footer a{ color:var(--muted); }
 "use strict";
 
 /* ===================== 설정 ===================== */
-var DATA_VERSION = "2026-11-16c";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
+var DATA_VERSION = "2026-11-16d";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
 var DEFAULT = { sex:"남", mid:"녹양중학교" };   // 중학교 선택지는 schools.json의 middles 순서(녹양중, 회룡중, 나머지 가나다순)
 // 중학교별 원서 제출 시간 (중학교가 의정부교육지원청에 일괄 제출) — 해마다 전형 계획으로 갱신하세요
 // 근거: 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」 14쪽 '의정부학군 원서 접수 일정표'
@@ -626,7 +626,7 @@ function prep(s){
     id:s.SD_SCHUL_CODE, n:shortName(s.SCHUL_NM), full:s.SCHUL_NM, sex:sex, sel:sel,
     est:s.FOND_SC_NM, type:s.HS_SC_NM, detail:s.SPCLY_PURPS_HS_ORD_NM||"",
     addr:s.ORG_RDNMA, tel:s.ORG_TELNO, url:s.HMPG_ADRES ? (/^https?:/.test(s.HMPG_ADRES)?s.HMPG_ADRES:"http://"+s.HMPG_ADRES) : "",
-    lat:s.lat, lng:s.lng, stats:s.stats||null, career:s.career||[],
+    lat:s.lat, lng:s.lng, stats:s.stats||null, career:s.career||[], majors:s.majors||null,
     admit:ADMIT[s.SCHUL_NM]||null, auto:AUTONOMOUS.indexOf(s.SCHUL_NM)>-1,
     opens:(s.FOND_YMD && s.FOND_YMD > DATA.updated.replace(/-/g,"")) ? s.FOND_YMD : ""   // 아직 문을 열지 않은 학교
   };
@@ -934,9 +934,35 @@ function statsHtml(s){
     + '<p class="fine">학교알리미 「학년별 · 학급별 학생수」 공시 (' + esc(st.year) + '년 4월 1일 기준, ' + esc(DATA.statsUpdated||"") + ' 수집). 합계에는 특수학급 학생이 빠져 있습니다.</p>';
 }
 function pct(a, b){ return (a==null || !b) ? "-" : (Math.round(a/b*1000)/10).toFixed(1); }
+// 특성화고: 학교알리미 「특성화고 · 산업수요 맞춤형고 졸업생의 취업 등 진로 현황」
+// 공식 취업률 = 취업자 ÷ (졸업자 − 진학자 − 입대자 − 제외인정자)
+function rate(job, grads, adv, army, exempt){ var b = grads - adv - army - exempt; return b > 0 ? (Math.round(job/b*1000)/10).toFixed(1) : "-"; }
+function vocCareerHtml(s){
+  var cs = s.career, c = cs[0];
+  var tiles = [[c.jobRate==null ? "-" : c.jobRate.toFixed(1), "취업률(공식)"], [pct(c.advance, c.grads), "대학 진학(전문대 포함)"], [pct(c.job, c.grads), "졸업생 중 취업자"], [pct(c.unemployed, c.grads), "미취업자"]];
+  var h = '<div class="stats">' + tiles.map(function(t){ return '<div class="stat"><b>' + t[0] + '<small>%</small></b><span>' + t[1] + '</span></div>'; }).join("") + '</div>';
+  h += '<div class="tblwrap"><table class="tbl"><tr><th>졸업</th><th>졸업생</th><th>진학</th><th>취업</th><th>취업률</th><th>입대</th><th>미취업</th></tr>';
+  cs.forEach(function(r){
+    h += '<tr><td>' + r.year + '. 2.</td><td>' + nf(r.grads) + '</td>'
+      + [r.advance, r.job].map(function(v){ return '<td>' + nf(v) + '<small class="pc"> ' + pct(v, r.grads) + '%</small></td>'; }).join("")
+      + '<td><b>' + (r.jobRate==null ? "-" : r.jobRate.toFixed(1)) + '%</b></td><td>' + nf(r.army) + '</td><td>' + nf(r.unemployed) + '</td></tr>';
+  });
+  h += '</table></div>';
+  var mj = s.majors;
+  if(mj && mj.list && mj.list.length){
+    h += '<h4 style="margin:14px 0 8px">학과별 현황 <small>' + mj.year + '년 2월 졸업생</small></h4><div class="tblwrap"><table class="tbl"><tr><th>학과</th><th>졸업생</th><th>진학</th><th>취업</th><th>취업률</th></tr>';
+    mj.list.forEach(function(m){
+      h += '<tr><td>' + esc(m.name) + '</td><td>' + nf(m.grads) + '</td><td>' + nf(m.advance) + '</td><td>' + nf(m.job) + '</td><td>' + rate(m.job, m.grads, m.advance, m.army, m.exempt) + '%</td></tr>';
+    });
+    h += '</table></div>';
+  }
+  h += '<p class="fine">학교알리미 「산업수요 맞춤형고 및 특성화고 졸업생의 취업 등 진로 현황」 공시. 공식 취업률은 진학자 · 입대자 · 제외인정자를 뺀 졸업생 가운데 취업한 비율입니다. 학과별 취업률도 같은 방식으로 계산했습니다.</p>';
+  return h;
+}
 function careerHtml(s){
   var cs = s.career || [];
   if(!cs.length) return noData(s, "졸업생 진로");
+  if(cs[0].voc) return vocCareerHtml(s);
   var c = cs[0];
   var tiles = [[pct(c.college4, c.grads), "4년제 대학"], [pct(c.advance, c.grads), "대학 진학(전문대 · 국외 포함)"], [pct(c.college2, c.grads), "전문대학"], [pct(c.etc, c.grads), "기타(재수 등)"]];
   var h = '<div class="stats">' + tiles.map(function(t){ return '<div class="stat"><b>' + t[0] + '<small>%</small></b><span>' + t[1] + '</span></div>'; }).join("") + '</div>';
@@ -995,7 +1021,7 @@ function showDetail(id){
   h += '<div class="dgrid">';
   h += '<div class="dsec"><h4>학년별 학생 · 학급 현황' + (s.stats ? ' <small>' + esc(s.stats.year) + '년 4월 1일 기준</small>' : '') + '</h4>' + statsHtml(s) + '</div>';
   var lastCareer = (s.career || [])[0];
-  h += '<div class="dsec"><h4>졸업생 진학 현황' + (lastCareer ? ' <small>' + lastCareer.year + '년 2월 졸업생 기준 비율</small>' : '') + '</h4>' + careerHtml(s) + '</div>';
+  h += '<div class="dsec"><h4>' + (lastCareer && lastCareer.voc ? '졸업생 취업 · 진학 현황' : '졸업생 진학 현황') + (lastCareer ? ' <small>' + lastCareer.year + '년 2월 졸업생 기준 비율</small>' : '') + '</h4>' + careerHtml(s) + '</div>';
   if(s.lat!=null && MID && MID.lat!=null){
     h += '<div class="dsec"><h4>' + esc(MID.n) + '에서 가는 길 <small>네이버지도 · 카카오맵에서 열립니다</small></h4>'
        + routeButtons(MID, MID.full, s)
