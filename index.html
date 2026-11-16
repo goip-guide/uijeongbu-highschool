@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="녹양중학교 3학년을 위한 의정부 학군 일반고 입학 안내. 의정부 고등학교를 지도에서 찾고, 녹양중에서 가는 길을 보고, 지망 순위를 적어 보세요.">
+<meta name="description" content="의정부 학군 중학교 3학년을 위한 일반고 입학 안내. 의정부 고등학교를 지도에서 찾고, 우리 중학교에서 가는 길을 보고, 지망 순위를 적어 보세요.">
 <meta name="theme-color" content="#EDEFEB" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131714" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="녹양중 고입 길잡이">
+<meta property="og:title" content="의정부 고입 길잡이">
 <meta property="og:description" content="의정부 학군 고등학교를 지도에서 찾고, 지망 순위를 적어 보는 연습용 페이지입니다.">
 <meta property="og:locale" content="ko_KR">
-<title>녹양중 고입 길잡이</title>
+<title>의정부 고입 길잡이</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -376,7 +376,7 @@ footer a{ color:var(--muted); }
 <body>
 
 <div class="topbar"><div class="wrap">
-  <div class="brand"><span class="seal">녹양중</span> 고입 길잡이 <small>2027학년도</small></div>
+  <div class="brand"><span class="seal midN">녹양중</span> 고입 길잡이 <small>2027학년도</small></div>
   <nav class="jump">
     <a href="#map" data-n="① 학교"><span>① 학교 찾기</span></a>
     <a href="#sim" data-n="② 지망"><span>② 지망 적어 보기</span></a>
@@ -388,9 +388,11 @@ footer a{ color:var(--muted); }
   <div class="hero">
     <div class="eyebrow">경기도 의정부 학군 · 고교 평준화 지역</div>
     <h1>의정부 일반고에<br>어떻게 배정되는지 알아보세요</h1>
-    <p class="lede">녹양중학교 3학년 학생과 학부모님을 위한 연습용 페이지입니다. 지도에서 학교를 눌러 <b>학교 정보와 녹양중에서 가는 길</b>을 보고, 지망 순위를 직접 적어 보며 <b>배정 방식</b>을 익힐 수 있습니다. 실제 원서 접수는 학교에서 배부하는 안내에 따라 진행됩니다.</p>
+    <p class="lede">의정부 학군 중학교 3학년 학생과 학부모님을 위한 연습용 페이지입니다. 재학 중인 중학교를 고르고, 지도에서 학교를 눌러 <b>학교 정보와 <span class="midN">녹양중</span>에서 가는 길</b>을 보고, 지망 순위를 직접 적어 보며 <b>배정 방식</b>을 익힐 수 있습니다. 실제 원서 접수는 학교에서 배부하는 안내에 따라 진행됩니다.</p>
     <div class="profile" role="group" aria-label="내 조건">
       <span class="pl">내 조건</span>
+      <label for="pfMid">재학 중인 중학교
+        <select id="pfMid"></select></label>
       <label for="pfSex">성별
         <select id="pfSex"><option value="남">남학생</option><option value="여">여학생</option></select></label>
       <span class="gus">의정부 학군 (단일학군)</span>
@@ -402,7 +404,7 @@ footer a{ color:var(--muted); }
       <ul>
         <li><span class="badge ok">지망</span><span>학군의 <b>모든 일반고</b>에 1지망부터 끝지망까지 순위를 적습니다 — <b>남학생 12지망, 여학생 11지망</b></span></li>
         <li><span class="badge ok">배정</span><span>내신 200점으로 배정대상자를 뽑은 뒤, 지망 순위를 반영해 <b>추첨</b>으로 1개교에 배정 (학군내 배정만, 구역 없음)</span></li>
-        <li><span class="badge ok">일정</span><span>원서 접수 <b>2026. 12. 4. ~ 10.</b> (녹양중은 12. 9. 제출) · 배정대상자 발표 <b>2027. 1. 6.</b> · 배정 학교 발표 <b>1. 22.</b></span></li>
+        <li><span class="badge ok">일정</span><span>원서 접수 <b>2026. 12. 4. ~ 10.</b> (<span class="midN">녹양중</span>은 <span id="stSubmit">12. 9.</span> 제출) · 배정대상자 발표 <b>2027. 1. 6.</b> · 배정 학교 발표 <b>1. 22.</b></span></li>
       </ul>
       <p class="fine">근거: 경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」(2026. 10.), 「2027학년도 경기도 고교 평준화 학군 학생 배정 방안」(2026. 8.)</p>
     </div>
@@ -415,7 +417,7 @@ footer a{ color:var(--muted); }
     <div class="snum">1</div>
     <div>
       <h2>지도에서 학교 찾기</h2>
-      <p id="mapLead">의정부 학군 일반고 13곳을 좌표대로 표시했습니다. 학교 표시를 누르거나 검색하면 <b>학년별 학생 수</b>, <b>졸업생 진학 현황</b>, 녹양중에서 가는 길이 나옵니다.</p>
+      <p id="mapLead">의정부 학군 일반고 13곳을 좌표대로 표시했습니다. 학교 표시를 누르거나 검색하면 <b>학년별 학생 수</b>, <b>졸업생 진학 현황</b>, <span class="midN">녹양중</span>에서 가는 길이 나옵니다.</p>
     </div>
   </div>
 
@@ -442,7 +444,7 @@ footer a{ color:var(--muted); }
   </div>
 
   <div class="card near">
-    <h3>녹양중에서 가까운 일반고</h3>
+    <h3><span class="midN">녹양중</span>에서 가까운 일반고</h3>
     <p class="sub">직선거리 순입니다. 실제 통학 거리와 시간은 학교를 눌러 길찾기로 확인하세요. 의정부 학군은 <b>주소를 고려하지 않고</b> 지망 순위와 추첨으로 배정하므로, 가까운 학교라고 배정되는 것은 아닙니다. 모집 인원은 2027학년도 전형 계획 기준입니다.</p>
     <div class="tblwrap"><table class="tbl" id="nearTbl"></table></div>
   </div>
@@ -508,8 +510,8 @@ footer a{ color:var(--muted); }
         <span class="n">유튜브 경기고입TV에서 학군별 영상을 볼 수 있습니다. 아래 '자료 출처'에 의정부 학군 영상 링크가 있습니다.</span></li>
       <li><span class="d mono">2026. 12. 4.(금) ~ 10.(목)</span><span class="t">원서 교부 · 접수</span>
         <span class="n">중학교에서 온라인 원서를 작성 · 출력해 의정부교육지원청에 학교 단위로 제출합니다. 마감은 12. 10.(목) 17시이며, 마감 후에는 취소할 수 없습니다.</span></li>
-      <li><span class="d mono">2026. 12. 9.(수) 오후</span><span class="t">녹양중 원서 제출일</span>
-        <span class="n">의정부학군 원서 접수 일정표의 녹양중 · 동암중 · 발곡중 제출 시간입니다. 그 전에 학교에서 지망 순위를 받으니, 담임 선생님 안내 날짜를 확인하세요.</span></li>
+      <li><span class="d mono" id="tlSubmitD">2026. 12. 9.(수) 오후</span><span class="t"><span class="midN">녹양중</span> 원서 제출일</span>
+        <span class="n" id="tlSubmitN">의정부학군 원서 접수 일정표의 제출 시간입니다.</span></li>
       <li><span class="d mono">2027. 1. 6.(수)</span><span class="t">배정대상자 발표</span>
         <span class="n">내신 200점으로 의정부 학군 모집 정원만큼 선발된 학생이 발표됩니다. 출신 중학교와 고등학교 입학 · 전학 포털(SATP)에서 확인합니다.</span></li>
       <li><span class="d mono">2027. 1. 22.(금)</span><span class="t">배정 학교 발표</span>
@@ -559,7 +561,7 @@ footer a{ color:var(--muted); }
 </div>
 
 <footer><div class="wrap">
-  <p>녹양중학교 3학년 · 2027학년도 고등학교 입학 안내</p>
+  <p><span id="footMid">녹양중학교</span> 3학년 · 2027학년도 고등학교 입학 안내</p>
   <p>자료 출처 — 경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」(2026. 10.) · 「2027학년도 경기도 고교 평준화 학군 학생 배정 방안」(2026. 8.), 배정 방안 설명회(<a href="https://youtu.be/q5RQYyAREuk" target="_blank" rel="noopener">의정부 학군 영상</a> · <a href="https://www.youtube.com/watch?v=eJ6E0p8OYCg" target="_blank" rel="noopener">전체 공통 영상</a>), <a href="https://satp.goe.go.kr" target="_blank" rel="noopener">경기도 고등학교 입학 · 전학 포털</a>, 교육부 NEIS 교육정보 개방 포털(학교 기본정보), 학교알리미 공시정보(학생 · 학급 현황, 졸업생 진로 현황), OpenStreetMap(학교 좌표)</p>
   <p id="dataDate"></p>
 </div></footer>
@@ -569,8 +571,18 @@ footer a{ color:var(--muted); }
 "use strict";
 
 /* ===================== 설정 ===================== */
-var DATA_VERSION = "2026-11-16b";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
-var DEFAULT = { sex:"남" };
+var DATA_VERSION = "2026-11-16c";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
+var DEFAULT = { sex:"남", mid:"녹양중학교" };   // 중학교 선택지는 schools.json의 middles 순서(녹양중, 회룡중, 나머지 가나다순)
+// 중학교별 원서 제출 시간 (중학교가 의정부교육지원청에 일괄 제출) — 해마다 전형 계획으로 갱신하세요
+// 근거: 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」 14쪽 '의정부학군 원서 접수 일정표'
+var SUBMIT = {
+  "경민중학교":"12. 7.(월) 오전", "민락중학교":"12. 7.(월) 오전", "호원중학교":"12. 7.(월) 오전",
+  "다온중학교":"12. 7.(월) 오후", "천보중학교":"12. 7.(월) 오후", "충의중학교":"12. 7.(월) 오후",
+  "경민여자중학교":"12. 8.(화) 오전", "의정부여자중학교":"12. 8.(화) 오전", "송양중학교":"12. 8.(화) 오전", "금오중학교":"12. 8.(화) 오전",
+  "회룡중학교":"12. 8.(화) 오후", "효자중학교":"12. 8.(화) 오후", "의정부중학교":"12. 8.(화) 오후", "훈민중학교":"12. 8.(화) 오후",
+  "부용중학교":"12. 9.(수) 오전", "솔뫼중학교":"12. 9.(수) 오전", "신곡중학교":"12. 9.(수) 오전",
+  "녹양중학교":"12. 9.(수) 오후", "동암중학교":"12. 9.(수) 오후", "발곡중학교":"12. 9.(수) 오후"
+};
 // 2027학년도 학교별 모집 현황 [학급, 정원, 체육특기자 종목] — 해마다 전형 계획으로 갱신하세요
 // 근거: 경기도교육청 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」 27쪽
 var ADMIT_YEAR = 2027;
@@ -586,7 +598,7 @@ var store = {
   set:function(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 };
 var P = store.get("ujb-profile") || {};
-var profile = { sex: (P.sex==="여"||P.sex==="남") ? P.sex : DEFAULT.sex };
+var profile = { sex: (P.sex==="여"||P.sex==="남") ? P.sex : DEFAULT.sex, mid: P.mid || DEFAULT.mid };
 
 /* ===================== 유틸 ===================== */
 function $(s){ return document.querySelector(s); }
@@ -640,12 +652,46 @@ function eligible(){
 }
 
 /* ===================== 내 조건 ===================== */
-var sexSel = $("#pfSex");
+var sexSel = $("#pfSex"), midSel = $("#pfMid"), MIDS = [];
 sexSel.value = profile.sex;
 sexSel.addEventListener("change", function(){
   profile.sex = sexSel.value; store.set("ujb-profile", profile);
   renderAll();
 });
+function midShort(full){ return full.replace("여자중학교","여중").replace("중학교","중"); }
+function fillMids(list){
+  MIDS = list.map(function(m){
+    return { id:"mid", n:midShort(m.SCHUL_NM), full:m.SCHUL_NM, lat:m.lat, lng:m.lng, addr:m.ORG_RDNMA,
+             sex: m.COEDU_SC_NM==="남" ? "남" : (m.COEDU_SC_NM==="여" ? "여" : "공학") };
+  });
+  midSel.innerHTML = MIDS.map(function(m){
+    return '<option value="' + esc(m.full) + '">' + esc(m.n) + (m.sex!=="공학" ? ' (' + (m.sex==="남" ? "남중" : "여중") + ')' : '') + '</option>';
+  }).join("");
+}
+// 선택한 중학교로 거리와 문구를 모두 다시 계산한다
+function setMid(full){
+  MID = MIDS.filter(function(m){ return m.full===full; })[0] || MIDS[0];
+  profile.mid = MID.full; midSel.value = MID.full;
+  SCHOOLS.forEach(function(s){ s.dist = km(MID, s); });
+}
+midSel.addEventListener("change", function(){
+  setMid(midSel.value);
+  // 남중 · 여중이면 성별을 맞춰 둔다 (공학이면 그대로)
+  if(MID.sex!=="공학"){ profile.sex = MID.sex; sexSel.value = MID.sex; }
+  store.set("ujb-profile", profile);
+  renderAll();
+});
+function renderMid(){
+  Array.prototype.forEach.call(document.querySelectorAll(".midN"), function(e){ e.textContent = MID.n; });
+  document.title = MID.n + " 고입 길잡이";
+  $("#footMid").textContent = MID.full;
+  var sub = SUBMIT[MID.full] || "", same = Object.keys(SUBMIT).filter(function(k){ return SUBMIT[k]===sub; }).map(midShort);
+  $("#stSubmit").textContent = sub ? sub.replace(/\(.*$/,"") : "학교 안내 날짜에";
+  $("#tlSubmitD").textContent = sub ? "2026. " + sub : "학교 안내 확인";
+  $("#tlSubmitN").textContent = sub
+    ? "의정부학군 원서 접수 일정표에서 " + same.join(" · ") + "이 함께 제출하는 시간입니다. 중학교가 모아서 의정부교육지원청에 내므로, 그 전에 학교에서 지망 순위를 받습니다. 담임 선생님 안내 날짜를 확인하세요."
+    : "이 학교의 제출 시간은 전형 계획 일정표에 없습니다. 담임 선생님 안내를 확인하세요.";
+}
 
 function renderHeader(){
   var gen = SCHOOLS.filter(function(s){ return s.sel==="admin"; });
@@ -659,7 +705,7 @@ function renderHeader(){
   h += '<span class="cnt e"><b>' + early + '</b> 전기고 (특성화 · 과학고)</span>';
   h += '<span class="cnt x"><b>' + cnt[other] + '</b> ' + (other==="남"?"남자":"여자") + '고등학교 · 지원 불가</span>';
   $("#counts").innerHTML = h;
-  var lg = '<span class="lg m"><i></i>녹양중학교</span>'
+  var lg = '<span class="lg m"><i></i>' + esc(MID.full) + '</span>'
          + '<span class="lg ' + (profile.sex==="남"?"b":"g") + '"><i></i>' + (profile.sex==="남"?"남자":"여자") + '고등학교</span>'
          + '<span class="lg c"><i></i>남녀공학</span>'
          + '<span class="lg e"><i></i>테두리: 전기고</span>'
@@ -703,7 +749,7 @@ function renderMap(){
       scX = scY = Math.min(scX, (H2-PAD*2)/dy);
       if(stretch > 1){ scY = scY*stretch; H2 = Math.round(dy*scY + PAD*2 + 30); }
     }
-    // 왼쪽 위 '의정부 학군' 글자 자리만큼 위쪽을 비운다 (녹양중이 학군 북서쪽 끝에 있어 겹치기 쉬움)
+    // 왼쪽 위 '의정부 학군' 글자 자리만큼 위쪽을 비운다 (녹양중처럼 학군 북서쪽 끝 학교는 겹치기 쉬움)
     H2 += 44;
     var ox = (W - dx*scX)/2, oy = (H2 - 44 - dy*scY)/2 + 44;
     // 같은 자리(경민 캠퍼스 등)에 있는 학교는 점을 살짝 벌려 모두 보이게
@@ -812,7 +858,7 @@ window.addEventListener("resize", function(){
 var selId = null;
 function markSel(){ Array.prototype.forEach.call(document.querySelectorAll(".mk"), function(g){ g.classList.toggle("sel", g.getAttribute("data-id")===selId); }); }
 
-/* ===================== 녹양중에서 가까운 학교 ===================== */
+/* ===================== 우리 중학교에서 가까운 학교 ===================== */
 function renderNear(){
   var gen = SCHOOLS.filter(function(s){ return s.sel==="admin"; }).sort(function(a,b){ return (a.dist||0)-(b.dist||0); });
   var max = Math.max.apply(null, gen.map(function(s){ return s.dist||0; })) || 1;
@@ -843,7 +889,7 @@ qIn.addEventListener("input", function(){
   if(!v){ sugg.hidden = true; sugg.innerHTML = ""; return; }
   var r = SCHOOLS.filter(function(s){ return s.full.indexOf(v)>-1 || s.n.indexOf(v)>-1; }).slice(0,10);
   sugg.innerHTML = r.length ? r.map(function(s){
-    return '<li><button type="button" data-id="' + esc(s.id) + '"><b>' + esc(s.full) + '</b><small>' + esc(typeLabel(s)) + ' · ' + esc(sexLabel(s)) + ' · 녹양중에서 ' + kmLabel(s.dist) + '</small></button></li>';
+    return '<li><button type="button" data-id="' + esc(s.id) + '"><b>' + esc(s.full) + '</b><small>' + esc(typeLabel(s)) + ' · ' + esc(sexLabel(s)) + ' · ' + esc(MID.n) + '에서 ' + kmLabel(s.dist) + '</small></button></li>';
   }).join("") : '<li><button type="button" disabled>검색 결과가 없습니다</button></li>';
   sugg.hidden = false;
 });
@@ -939,7 +985,7 @@ function showDetail(id){
   else if(s.sel==="early") how = '<b>전기고</b>입니다. 평준화 일반고 지망 칸에 적지 않고 학교별로 따로 지원합니다. 전기고에 합격하면 평준화 일반고에는 지원할 수 없습니다.';
   else how = '의정부 학군 지망 칸에 적습니다. 적은 순위를 반영해 추첨으로 배정됩니다.';
   h += '<dt>지원 방식</dt><dd>' + how + '</dd>';
-  h += '<dt>녹양중에서</dt><dd>직선거리 ' + kmLabel(s.dist) + '</dd>';
+  h += '<dt>' + esc(MID.n) + '에서</dt><dd>직선거리 ' + kmLabel(s.dist) + '</dd>';
   h += '<dt>전화</dt><dd>' + esc(s.tel || "-") + '</dd>';
   h += '</dl><div class="btnrow">';
   if(s.url) h += '<a class="btn primary" href="' + esc(s.url) + '" target="_blank" rel="noopener">학교 홈페이지 열기 ↗</a>';
@@ -951,7 +997,7 @@ function showDetail(id){
   var lastCareer = (s.career || [])[0];
   h += '<div class="dsec"><h4>졸업생 진학 현황' + (lastCareer ? ' <small>' + lastCareer.year + '년 2월 졸업생 기준 비율</small>' : '') + '</h4>' + careerHtml(s) + '</div>';
   if(s.lat!=null && MID && MID.lat!=null){
-    h += '<div class="dsec"><h4>녹양중에서 가는 길 <small>네이버지도 · 카카오맵에서 열립니다</small></h4>'
+    h += '<div class="dsec"><h4>' + esc(MID.n) + '에서 가는 길 <small>네이버지도 · 카카오맵에서 열립니다</small></h4>'
        + routeButtons(MID, MID.full, s)
        + '<p class="fine">새 창에서 소요 시간과 노선이 나옵니다.</p></div>';
   }
@@ -1076,7 +1122,7 @@ $("#jeongi").addEventListener("change", paint);
 function chipEl(s){
   var b = document.createElement("button");
   b.type = "button"; b.className = "chip " + kind(s); b.setAttribute("draggable","true"); b.setAttribute("data-id", s.id);
-  b.title = s.full + " · 녹양중에서 " + kmLabel(s.dist);
+  b.title = s.full + " · " + MID.n + "에서 " + kmLabel(s.dist);
   b.innerHTML = '<i></i>' + esc(s.n) + ' <small>' + kmLabel(s.dist) + '</small>';
   b.addEventListener("dragstart", function(ev){ ev.dataTransfer.setData("text/plain", s.id); ev.dataTransfer.effectAllowed = "copy"; });
   b.addEventListener("click", function(){ assign(s.id); });
@@ -1098,7 +1144,7 @@ function renderChips(){
   group("남녀공학 고등학교", co);
   var p = document.createElement("p"); p.className = "exnote";
   p.textContent = (no.length ? (profile.sex==="남"?"여자":"남자") + "고등학교 " + no.length + "개교(" + no.map(function(s){ return s.n; }).join(" · ") + ")는 " + stuLabel() + "이 지원할 수 없어 목록에서 뺐습니다. " : "")
-    + "특성화고 · 과학고 같은 전기고는 학교별로 따로 지원하므로 이 목록에 없습니다. 학교 옆 숫자는 녹양중에서의 직선거리입니다.";
+    + "특성화고 · 과학고 같은 전기고는 학교별로 따로 지원하므로 이 목록에 없습니다. 학교 옆 숫자는 " + MID.n + "에서의 직선거리입니다.";
   host.appendChild(p);
   markUsed();
 }
@@ -1123,7 +1169,7 @@ $("#check").addEventListener("click", function(){
   }
   var s1 = byId[slots[0]];
   if(s1){
-    add("info", first + " 학교(<b>" + esc(s1.n) + "</b>)는 녹양중에서 직선거리 " + kmLabel(s1.dist) + "입니다. 각 학교는 그 학교를 1지망한 학생부터 추첨해 채우므로, <b>앞쪽 지망일수록</b> 배정될 가능성에 큰 영향을 줍니다.");
+    add("info", first + " 학교(<b>" + esc(s1.n) + "</b>)는 " + esc(MID.n) + "에서 직선거리 " + kmLabel(s1.dist) + "입니다. 각 학교는 그 학교를 1지망한 학생부터 추첨해 채우므로, <b>앞쪽 지망일수록</b> 배정될 가능성에 큰 영향을 줍니다.");
   }
   if(isJasa()) add("info", "원서에서 '외고/국제고/자사고 지원자'에 체크하면 1지망이 그 학교로 자동 설정됩니다. 외고 등과 일반고 1지망에 <b>동시에 지원하면 이중지원</b>으로 둘 다 불합격 처리되니 주의하세요.");
   var newOne = slots.map(function(id){ return byId[id]; }).filter(function(s){ return s && s.opens; });
@@ -1140,12 +1186,13 @@ $("#check").addEventListener("click", function(){
 
 /* ===================== 시작 ===================== */
 function renderAll(){
-  renderHeader(); renderMap(); renderNear(); resizeSlots(); renderChips(); paint();
+  renderMid(); renderHeader(); renderMap(); renderNear(); resizeSlots(); renderChips(); paint();
   if(selId) showDetail(selId);
 }
 fetch("schools.json?v=" + DATA_VERSION).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }).then(function(d){
   DATA = d;
-  MID = { id:"mid", n:"녹양중", full:d.middle.SCHUL_NM, lat:d.middle.lat, lng:d.middle.lng };
+  fillMids(d.middles || []);
+  setMid(profile.mid);              // 저장된 중학교가 없거나 목록에 없으면 첫 번째(녹양중)
   SCHOOLS = d.schools.map(prep);
   SCHOOLS.forEach(function(s){ byId[s.id] = s; });
   lastNarrow = ($("#svgmap").parentNode.clientWidth || 600) < 560;
