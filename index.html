@@ -573,7 +573,7 @@ footer a{ color:var(--muted); }
 "use strict";
 
 /* ===================== 설정 ===================== */
-var DATA_VERSION = "2026-11-16d";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
+var DATA_VERSION = "2026-11-16e";  // schools.json을 갱신하면 함께 바꿔야 기존 방문자에게도 새 데이터가 보임
 var DEFAULT = { sex:"남", mid:"녹양중학교" };   // 중학교 선택지는 schools.json의 middles 순서(녹양중, 회룡중, 나머지 가나다순)
 // 중학교별 원서 제출 시간 (중학교가 의정부교육지원청에 일괄 제출) — 해마다 전형 계획으로 갱신하세요
 // 근거: 「2027학년도 경기도 평준화 지역 후기 일반고등학교 신입생 전형 계획」 14쪽 '의정부학군 원서 접수 일정표'
@@ -925,15 +925,14 @@ function statsHtml(s){
   }).join("");
   var sp = st.special && (st.special.classes || st.special.students)
     ? '<tr><td>특수학급</td><td>' + nf(st.special.classes) + '</td><td></td><td></td><td>' + nf(st.special.students) + '</td></tr>' : "";
-  var g1 = (st.byGrade||[])[0] || {};
   return '<div class="stats">'
     + '<div class="stat"><b>' + nf(st.students) + '<small>명</small></b><span>전체 학생</span></div>'
     + '<div class="stat"><b>' + nf(st.classes) + '<small>학급</small></b><span>전체 학급</span></div>'
     + '<div class="stat"><b>' + nf(st.perClass) + '<small>명</small></b><span>학급당 학생</span></div>'
-    + '<div class="stat"><b>' + nf(g1.boys!=null ? g1.boys + g1.girls : null) + '<small>명</small></b><span>1학년 학생</span></div></div>'
+    + '<div class="stat"><b>' + nf(st.teachers) + '<small>명</small></b><span>교원(총계)</span></div></div>'
     + '<div class="tblwrap"><table class="tbl"><tr><th>학년</th><th>학급</th><th>남</th><th>여</th><th>학생</th></tr>' + rows + sp
     + '<tr class="sum"><th>합계</th><td>' + nf(st.classes) + '</td><td></td><td></td><td>' + nf(st.students) + '</td></tr></table></div>'
-    + '<p class="fine">학교알리미 「학년별 · 학급별 학생수」 공시 (' + esc(st.year) + '년 4월 1일 기준, ' + esc(DATA.statsUpdated||"") + ' 수집). 합계에는 특수학급 학생이 빠져 있습니다.</p>';
+    + '<p class="fine">학교알리미 「학년별 · 학급별 학생수」(' + esc(st.year) + '년 4월 1일 기준) · 「직위별 교원 현황」(' + esc(st.year) + '년 5월 공시) 공시, ' + esc(DATA.statsUpdated||"") + ' 수집. 합계에는 특수학급 학생이 빠져 있습니다. 교원(총계)은 교장 · 교감 · 교사 · 기간제교사 · 강사를 모두 더한 수이며 휴직 교원은 빠져 있습니다.</p>';
 }
 function pct(a, b){ return (a==null || !b) ? "-" : (Math.round(a/b*1000)/10).toFixed(1); }
 // 특성화고: 학교알리미 「특성화고 · 산업수요 맞춤형고 졸업생의 취업 등 진로 현황」
