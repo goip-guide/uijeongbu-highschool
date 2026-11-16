@@ -61,6 +61,10 @@ powershell -ExecutionPolicy Bypass -File tools\serve.ps1
 - `SUBMIT`: 중학교별 원서 제출 시간 (전형 계획 '의정부학군 원서 접수 일정표', 2027학년도는 14쪽)
 - 지망 수: 화면은 성별로 지원할 수 있는 일반고 수만큼 칸을 만듭니다(남 12, 여 11). 학교가 늘거나 줄면 1번 스크립트를 다시 실행하면 됩니다.
 
+## 조회수 보기
+- 방문 수는 GoatCounter(쿠키 없음, 개인 식별 안 함)로 셉니다. 대시보드: https://uijeongbu-hs.goatcounter.com (로그인 필요)
+- 서울 페이지(`kyunghee-hs`)와 따로 집계됩니다. 코드는 `index.html`의 `<head>` 끝에 있습니다.
+
 주의
 - 저장소는 **공개**입니다. 비밀번호·API 키·개인정보를 올리지 마세요. (현재 파일에는 키가 없습니다.)
 - `schools.json`을 갱신해서 다시 올릴 때는 `index.html` 아래쪽 `DATA_VERSION` 값도 바꿔야 이미 접속했던 사람에게 새 데이터가 보입니다.
