@@ -29,6 +29,7 @@
   --focus:#0E7581; --focus-bg:#E3F3F4; --focus-line:#A9D6DA;
   --ok:#2C7A4B; --warn:#A9781E; --bad:#A6303B; --bad-bg:#F7E9EA; --bad-line:#E0BFC2;
   --land:#E3EDDA; --land-line:#84AB6C;
+  --boy-ink:#153F8C; --girl-ink:#8C2D5C; --co-ink:#1E5C37; --early-ink:#4B3C8C;   /* 지도 이름표 글자 (연한 바탕 위 진한 글씨) */
   --shadow:0 1px 2px rgba(20,30,22,.05), 0 8px 24px -12px rgba(20,30,22,.18);
   --r:14px;
 }
@@ -46,6 +47,7 @@
     --focus:#7FD3DB; --focus-bg:#142A2D; --focus-line:#2B5257;
     --ok:#7FCB99; --warn:#E3BC72; --bad:#F0949B; --bad-bg:#332224; --bad-line:#5A383C;
     --land:#222B20; --land-line:#618150;
+    --boy-ink:#B3CDF7; --girl-ink:#F5BCD7; --co-ink:#A6DDB8; --early-ink:#CEC5F3;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
     color-scheme:dark;
   }
@@ -63,6 +65,7 @@
   --focus:#7FD3DB; --focus-bg:#142A2D; --focus-line:#2B5257;
   --ok:#7FCB99; --warn:#E3BC72; --bad:#F0949B; --bad-bg:#332224; --bad-line:#5A383C;
   --land:#222B20; --land-line:#618150;
+  --boy-ink:#B3CDF7; --girl-ink:#F5BCD7; --co-ink:#A6DDB8; --early-ink:#CEC5F3;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
   color-scheme:dark;
 }
@@ -179,6 +182,17 @@ section{ padding:34px 0; border-top:1px solid var(--line); scroll-margin-top:64p
 .lg.b i{background:var(--boy)} .lg.c i{background:var(--co)} .lg.g i{background:var(--girl)} .lg.x i{background:var(--off)}
 .lg.e i{background:var(--surface); box-shadow:0 0 0 3px var(--early)}
 .lg.m i{background:var(--seal); border-radius:3px; transform:rotate(45deg)}
+/* 범례: 지도 이름표와 같은 모양 (구분 꼬리표 + 이름) */
+.lgp{
+  display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700;
+  border:1.5px solid var(--line); border-radius:8px; padding:3px 10px 3px 4px;
+}
+.lgp b{ font-family:"Gothic A1",sans-serif; font-size:11px; font-weight:900; color:var(--surface); border-radius:5px; padding:1px 6px; }
+.lgp.b{ background:var(--boy-bg); border-color:var(--boy); color:var(--boy-ink); } .lgp.b b{ background:var(--boy); }
+.lgp.g{ background:var(--girl-bg); border-color:var(--girl); color:var(--girl-ink); } .lgp.g b{ background:var(--girl); }
+.lgp.c{ background:var(--co-bg); border-color:var(--co); color:var(--co-ink); } .lgp.c b{ background:var(--co); }
+.lgp.e{ background:var(--early-bg); border-color:var(--early); color:var(--early-ink); } .lgp.e b{ background:var(--early); }
+.lgp.x{ background:var(--off-bg); border-color:var(--off-line); border-style:dashed; color:var(--muted); } .lgp.x b{ background:var(--muted); }
 
 /* ---------- map ---------- */
 .maparea{ padding:10px 10px 4px; overflow:hidden; }
@@ -642,6 +656,18 @@ function kind(s){
   return s.sex==="남" ? "b" : (s.sex==="여" ? "g" : "c");
 }
 function colorOf(k){ return {b:"var(--boy)",c:"var(--co)",g:"var(--girl)",x:"var(--off)"}[k]; }
+// 지도 이름표: 앞에 구분 꼬리표(남 · 여 · 공학 · 특성화 · 과학)를 붙이고, 같은 계열의 연한 바탕 + 진한 글씨로 그린다
+var TAG_FS = 11;
+function tagOf(s){ return s.sel==="early" ? (s.type==="특성화고" ? "특성화" : "과학") : s.sex; }
+function tagW(s){ return tagOf(s).length*TAG_FS + 10; }
+function labelW(s, fs){ return s===MID ? Math.max(40, s.n.length*fs + 12) : tagW(s) + 4 + s.n.length*fs + 14; }
+function labelStyle(kk, s){
+  if(kk==="x") return { bg:"var(--off-bg)", line:"var(--off-line)", tag:"var(--muted)", ink:"var(--muted)", dash:"4 3" };
+  if(s.sel==="early") return { bg:"var(--early-bg)", line:"var(--early)", tag:"var(--early)", ink:"var(--early-ink)" };
+  return { b:{ bg:"var(--boy-bg)", line:"var(--boy)", tag:"var(--boy)", ink:"var(--boy-ink)" },
+           g:{ bg:"var(--girl-bg)", line:"var(--girl)", tag:"var(--girl)", ink:"var(--girl-ink)" },
+           c:{ bg:"var(--co-bg)", line:"var(--co)", tag:"var(--co)", ink:"var(--co-ink)" } }[kk];
+}
 function selLabel(s){ return s.sel==="admin" ? "의정부 학군 평준화 배정 (선복수지원 후추첨)" : "전기 모집 · 학교별 선발"; }
 function typeLabel(s){ return s.auto ? "일반고 (자율형 공립고)" : s.type + (s.detail ? " (" + s.detail + ")" : ""); }
 function nf(n){ return n==null ? "-" : Number(n).toLocaleString("ko-KR"); }
@@ -708,10 +734,10 @@ function renderHeader(){
   h += '<span class="cnt x"><b>' + cnt[other] + '</b> ' + (other==="남"?"남자":"여자") + '고등학교 · 지원 불가</span>';
   $("#counts").innerHTML = h;
   var lg = '<span class="lg m"><i></i>' + esc(MID.full) + '</span>'
-         + '<span class="lg ' + (profile.sex==="남"?"b":"g") + '"><i></i>' + (profile.sex==="남"?"남자":"여자") + '고등학교</span>'
-         + '<span class="lg c"><i></i>남녀공학</span>'
-         + '<span class="lg e"><i></i>테두리: 전기고</span>'
-         + '<span class="lg x"><i></i>' + (other==="남"?"남자":"여자") + '고등학교 (지원 불가)</span>';
+         + '<span class="lgp ' + (profile.sex==="남"?"b":"g") + '"><b>' + profile.sex + '</b>' + (profile.sex==="남"?"남자":"여자") + '고등학교</span>'
+         + '<span class="lgp c"><b>공학</b>남녀공학</span>'
+         + '<span class="lgp x"><b>' + other + '</b>' + (other==="남"?"남자":"여자") + '고등학교 · 지원 불가</span>'
+         + '<span class="lgp e"><b>특성화</b><b>과학</b>전기고 (체크하면 표시)</span>';
   $("#legend").innerHTML = lg;
 }
 
@@ -791,7 +817,7 @@ function renderMap(){
     var order = pts.slice().sort(function(a,b){ return (b.crowd-a.crowd) || (a.x-b.x); });
     var miss = 0;
     order.forEach(function(p){
-      var lw = Math.max(40, p.s.n.length*fs + 12), cs = candsOf(p, lw), c = null;
+      var lw = labelW(p.s, fs), cs = candsOf(p, lw), c = null;
       for(var i=0;i<cs.length;i++){ var r = {x:cs[i].x, y:cs[i].y, w:lw, h:lh}; if(!out(r) && !overlaps(r)){ c = cs[i]; break; } }
       if(!c){
         // 빈 자리가 없으면 겹침이 가장 적은 자리라도 쓴다 (이름이 빠지지 않게)
@@ -825,10 +851,21 @@ function renderMap(){
     if(c){
       var ax = c.side==="r" ? c.x : (c.side==="l" ? c.x+lw : c.x+lw/2);
       var ay = c.side==="t" ? c.y+lh : (c.side==="b" ? c.y : c.y+lh/2);
-      g.appendChild(el("line",{ x1:p.x, y1:p.y, x2:ax, y2:ay, stroke:col, "stroke-width":"1.6" }));
-      g.appendChild(el("rect",{ x:c.x, y:c.y, width:lw, height:lh, rx:7, fill:isMid?"var(--seal)":"var(--surface)", stroke:col, "stroke-width":"1.5" }));
-      var t = el("text",{ x:c.x+lw/2, y:c.y+lh/2+fs*0.36, "font-size":String(fs), "font-weight":"900", fill:isMid?"var(--seal-ink)":col, "text-anchor":"middle", "pointer-events":"none" });
-      t.textContent = s.n; g.appendChild(t);
+      if(isMid){
+        g.appendChild(el("line",{ x1:p.x, y1:p.y, x2:ax, y2:ay, stroke:col, "stroke-width":"1.6" }));
+        g.appendChild(el("rect",{ x:c.x, y:c.y, width:lw, height:lh, rx:7, fill:"var(--seal)", stroke:col, "stroke-width":"1.5" }));
+        var tm = el("text",{ x:c.x+lw/2, y:c.y+lh/2+fs*0.36, "font-size":String(fs), "font-weight":"900", fill:"var(--seal-ink)", "text-anchor":"middle", "pointer-events":"none" });
+        tm.textContent = s.n; g.appendChild(tm);
+      } else {
+        var st = labelStyle(kk, s), tw = tagW(s);
+        g.appendChild(el("line",{ x1:p.x, y1:p.y, x2:ax, y2:ay, stroke:st.tag, "stroke-width":"1.6", "stroke-dasharray":st.dash||"none" }));
+        g.appendChild(el("rect",{ x:c.x, y:c.y, width:lw, height:lh, rx:7, fill:st.bg, stroke:st.line, "stroke-width":"1.5", "stroke-dasharray":st.dash||"none" }));
+        g.appendChild(el("rect",{ x:c.x+4, y:c.y+4, width:tw, height:lh-8, rx:5, fill:st.tag, "pointer-events":"none" }));
+        var tg = el("text",{ x:c.x+4+tw/2, y:c.y+lh/2+TAG_FS*0.36, "font-size":String(TAG_FS), "font-weight":"900", fill:"var(--surface)", "text-anchor":"middle", "pointer-events":"none" });
+        tg.textContent = tagOf(s); g.appendChild(tg);
+        var t = el("text",{ x:c.x+4+tw+(lw-4-tw)/2, y:c.y+lh/2+fs*0.36, "font-size":String(fs), "font-weight":"900", fill:st.ink, "text-anchor":"middle", "pointer-events":"none" });
+        t.textContent = s.n; g.appendChild(t);
+      }
     }
     if(isMid){
       g.appendChild(el("rect",{ x:p.x-7, y:p.y-7, width:14, height:14, rx:3, fill:col, stroke:"var(--surface)", "stroke-width":"2.2", transform:"rotate(45 " + p.x + " " + p.y + ")" }));
@@ -868,7 +905,7 @@ function renderNear(){
   gen.forEach(function(s, i){
     var ok = sexOk(s);
     h += '<tr class="rowlink' + (ok ? '' : ' off') + '" data-row="' + esc(s.id) + '" tabindex="0">'
-      + '<td>' + (i+1) + '</td><td class="l"><b>' + esc(s.n) + '</b>' + (s.opens ? ' <span class="badge n">신설</span>' : '') + '</td><td class="l">' + esc(sexLabel(s)) + '</td>'
+      + '<td>' + (i+1) + '</td><td class="l"><b>' + esc(s.n) + '</b>' + (s.opens ? ' <span class="badge n">신설</span>' : '') + '</td><td class="l"><span class="badge ' + (s.sex==="남"?"b":(s.sex==="여"?"g":"c")) + '">' + esc(sexLabel(s)) + '</span></td>'
       + '<td class="l"><span class="bar" style="width:' + Math.round((s.dist||0)/max*60) + 'px"></span>' + kmLabel(s.dist) + '</td>'
       + '<td>' + (s.admit ? nf(s.admit[1]) + '명' : '-') + '</td>'
       + '<td>' + (s.stats ? nf(s.stats.students) + '명' : '-') + '</td>'
