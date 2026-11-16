@@ -5,7 +5,9 @@
 - 의정부 학군 일반고 13개교를 지도에서 찾습니다. 학교를 누르거나 검색하면 학년별 학생 수, 졸업생 진학 현황, 우리 중학교·집에서 가는 네이버지도·카카오맵 길찾기가 나옵니다.
 - 2027학년도 전형 계획에 맞춰 지망 순위(남 12지망, 여 11지망)를 적어 보고 확인할 수 있습니다.
 
-서버와 인증키가 필요 없습니다. [서울 고등학교 길잡이](https://github.com/jooane12/seoul-highschool)와 같은 구성입니다.
+서버와 인증키가 필요 없습니다. 서울 고등학교 길잡이와 같은 구성입니다.
+
+공개 주소: https://goip-guide.github.io/uijeongbu-highschool/
 
 ## 구성
 | 파일 | 설명 |
@@ -52,7 +54,7 @@ powershell -ExecutionPolicy Bypass -File tools\serve.ps1
 2. **uploading an existing file** → `index.html`, `schools.json`, `README.md`, `tools`를 끌어다 놓고 **Commit changes**
    - `tools/raw`, `tools/geocode_cache.json`, `_ref`(요강 PDF와 글자 추출 도구)는 올리지 마세요.
 3. **Settings → Pages** → Branch `main` / `(root)` → Save
-4. 1~2분 뒤 `https://jooane12.github.io/uijeongbu-highschool/` 로 접속됩니다.
+4. 1~2분 뒤 `https://goip-guide.github.io/uijeongbu-highschool/` 로 접속됩니다. (저장소는 `goip-guide` 조직에 있습니다. 개인 아이디가 주소에 드러나지 않게 조직으로 옮겼습니다.)
 
 ## 해마다 갱신할 내용
 새 학년도 「평준화 지역 후기 일반고등학교 신입생 전형 계획」과 「고교 평준화 학군 학생 배정 방안」이 나오면 `index.html`에서 아래를 고치세요.
