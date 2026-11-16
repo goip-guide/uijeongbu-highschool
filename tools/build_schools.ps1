@@ -1,4 +1,4 @@
-﻿# 의정부시 고등학교 목록과 녹양중 위치로 schools.json을 만든다.
+﻿# 의정부시 고등학교 목록과 의정부 학군 중학교 위치로 schools.json을 만든다.
 # 실행: powershell -ExecutionPolicy Bypass -File tools\build_schools.ps1
 # - NEIS 인증키 없이 동작한다. 키가 없으면 NEIS가 한 번에 5개까지만 돌려주고 페이지 번호를 무시하므로,
 #   학교 이름 일부로 나눠 조회한 뒤 주소가 '의정부시'인 학교만 모은다.
@@ -11,7 +11,11 @@ $cacheFile = Join-Path $PSScriptRoot 'geocode_cache.json'
 $outFile   = Join-Path $root 'schools.json'
 
 $NAMES = '의정부','경민','광동','발곡','부용','상우','송현','효자','호원','송양','영석','훈민','과학','한국','IT','비즈니스'
-$MIDDLE = '녹양중학교'      # 기준 중학교
+# 의정부 학군 중학교 (화면의 '재학 중인 중학교' 선택지). 근거: 2027학년도 전형 계획 [별표 2] 의정부학군 출신 중학교 명단
+# 이 순서대로 선택지에 나온다(녹양중, 회룡중을 맨 위에 두고 나머지는 가나다순).
+$MIDDLES = '녹양중학교','회룡중학교','경민중학교','경민여자중학교','금오중학교','다온중학교','동암중학교','민락중학교',
+           '발곡중학교','부용중학교','솔뫼중학교','송양중학교','신곡중학교','의정부중학교','의정부여자중학교','천보중학교',
+           '충의중학교','호원중학교','효자중학교','훈민중학교'
 
 # NEIS에 아직 없는 새 학교 (NEIS에 같은 이름이 생기면 자동으로 NEIS 정보를 쓴다)
 # 근거: 경기도교육청 「2027학년도 경기도 고교 평준화 학군 학생 배정 방안」 78쪽 '의정부학군 일반고 소재지 현황'
@@ -66,8 +70,13 @@ foreach($n in $NAMES){
     if($x.ORG_RDNMA -like '*의정부시*' -and -not $seen[$x.SD_SCHUL_CODE]){ $seen[$x.SD_SCHUL_CODE] = 1; $list += ,(Pick $x) }
   }
 }
-$mid = (Neis ('SCHUL_NM=' + [uri]::EscapeDataString($MIDDLE))) | Where-Object { $_.SCHUL_NM -eq $MIDDLE } | Select-Object -First 1
-if(-not $mid){ throw "$MIDDLE 을(를) NEIS에서 찾지 못했습니다." }
+$mids = @(); $midMiss = @()
+foreach($m in $MIDDLES){
+  $x = (Neis ('SCHUL_KND_SC_NM=' + [uri]::EscapeDataString('중학교') + '&SCHUL_NM=' + [uri]::EscapeDataString($m))) |
+       Where-Object { $_.SCHUL_NM -eq $m -and $_.ORG_RDNMA -like '*의정부시*' } | Select-Object -First 1
+  if($x){ $mids += ,(Pick $x) } else { $midMiss += $m }
+}
+if($midMiss.Count){ throw ("NEIS에서 찾지 못한 중학교: " + ($midMiss -join ', ')) }
 
 foreach($x in $EXTRA){
   if(-not ($list | Where-Object { $_.SCHUL_NM -eq $x.SCHUL_NM })){ $list += ,$x }
@@ -80,11 +89,11 @@ foreach($s in $list){
   if($twin){ $s.lat = $twin.lat; $s.lng = $twin.lng }
 }
 $list = $list | Sort-Object { $_.SCHUL_NM }
-$data = [ordered]@{ updated = (Get-Date -Format 'yyyy-MM-dd'); middle = (Pick $mid); schools = @($list) }
+$data = [ordered]@{ updated = (Get-Date -Format 'yyyy-MM-dd'); middles = @($mids); schools = @($list) }
 $enc = New-Object System.Text.UTF8Encoding($false)
 [IO.File]::WriteAllText($outFile, ($data | ConvertTo-Json -Depth 6 -Compress), $enc)
 [IO.File]::WriteAllText($cacheFile, ($cache | ConvertTo-Json -Depth 4), $enc)
 
-$noPos = @($list | Where-Object { $_.lat -eq $null })
-"schools.json: 고등학교 $($list.Count)개교 (일반고 $(@($list | Where-Object { $_.HS_SC_NM -eq '일반고' }).Count)개교), 기준 중학교 $($mid.SCHUL_NM)"
+$noPos = @($list + $mids | Where-Object { $_.lat -eq $null })
+"schools.json: 고등학교 $($list.Count)개교 (일반고 $(@($list | Where-Object { $_.HS_SC_NM -eq '일반고' }).Count)개교), 중학교 $($mids.Count)개교"
 if($noPos.Count){ "좌표 없음: " + (($noPos | ForEach-Object { $_.SCHUL_NM }) -join ', ') }
