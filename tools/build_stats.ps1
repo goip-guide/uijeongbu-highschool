@@ -4,6 +4,7 @@
 # - 인증키가 필요 없다. 학교알리미 '학교별 공시정보' 화면이 쓰는 주소에서 받는다(화면 구조가 바뀌면 실패할 수 있음).
 #   · 학교 목록:   /ei/ss/pneiss_a03_s0_school_json.do  (의정부시 고등학교, 학교알리미 학교 식별번호 SHL_IDF_CD)
 #   · 3-가-3 학년별·학급별 학생수: /ei/pp/Pneipp_b03_s0p.do  (올해 4월 1일 기준)
+#   · 6-가 직위별 교원 현황:        /ei/pp/Pneipp_b08_s0p.do  (올해 5월 공시, '합계(A+B)' 줄의 총계 = 교원 수)
 #   · 13-다 졸업생의 진로 현황:   /ei/pp/Pneipp_b06_s0p.do  (해마다 11월 공시, 그해 2월 졸업생)
 #   · 13-라 특성화고 · 산업수요 맞춤형고 졸업생의 취업 등 진로 현황: /ei/pp/Pneipp_b64_s0p.do (특성화고는 13-다가 비어 있어 이것을 쓴다)
 #     11월 공시 항목이라 올해 항목 목록에는 아직 없고, 지난해(JG_YEAR) 목록에서 찾았다.
@@ -77,8 +78,15 @@ foreach($s in $data.schools){
       $byGrade = @(0..2 | ForEach-Object { [ordered]@{ boys = (Num $sum[$_*3]); girls = (Num $sum[$_*3+1]) } })
       $students = (Num $sum[2]) + (Num $sum[5]) + (Num $sum[8])
       $classes = $cls[0] + $cls[1] + $cls[2]
+      # 직위별 교원 현황: 교장 ~ 강사까지 더한 총계 (휴직교원은 별도 줄이라 빠짐)
+      $teachers = $null
+      $th = Fetch "${code}_b08_$y.html" '/ei/pp/Pneipp_b08_s0p.do' (Form @{ GS_HANGMOK_CD = '08'; GS_HANGMOK_NO = '6-가'; GS_BURYU_CD = 'JG050'; JG_BURYU_CD = 'JG060'; JG_HANGMOK_CD = '22'; SHL_IDF_CD = $id; JG_YEAR = $y; JG_YEAR2 = $y; CHOSEN_JG_YEAR = $y; PRE_JG_YEAR = $y }) $EUC
+      if($th){
+        $tr = @(Rows $th) | Where-Object { $_[0] -like '합계*' -and $_.Count -ge 15 } | Select-Object -First 1
+        if($tr){ $teachers = Num $tr[14] }
+      }
       $stats = [ordered]@{
-        year = $STATS_YEAR; students = $students; classes = $classes
+        year = $STATS_YEAR; students = $students; classes = $classes; teachers = $teachers
         perClass = $(if($classes){ [math]::Round($students / $classes, 1) } else { $null })
         classesByGrade = $cls; byGrade = $byGrade
         special = [ordered]@{ classes = $spCls; students = (Num $sum[11]) }
